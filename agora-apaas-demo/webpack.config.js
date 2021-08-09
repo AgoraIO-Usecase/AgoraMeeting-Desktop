@@ -45,6 +45,7 @@ const config = function (mode) {
     },
     plugins: [],
     devServer: {
+      open: true,
       watchOptions: {
         ignored: /node_modules/,
       },
