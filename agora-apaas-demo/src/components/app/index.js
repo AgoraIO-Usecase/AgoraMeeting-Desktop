@@ -6,7 +6,7 @@ const appId = "<YOUR APPID>";
 //  Please enter your appCertificate
 const appCertificate = "<YOUR APPCERTIFICATE>";
 
-const userId = "test";
+const userId = "123456";
 
 const token = RtmTokenBuilder.buildToken(appId, appCertificate, userId, RtmRole.Rtm_User, 0);
 
