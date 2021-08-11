@@ -1091,10 +1091,10 @@ agora-access-token@2.0.4:
     crc-32 "1.2.0"
     cuint "0.2.2"
 
-agora-meeting-sdk@1.0.0-rc.1:
-  version "1.0.0-rc.1"
-  resolved "https://registry.nlark.com/agora-meeting-sdk/download/agora-meeting-sdk-1.0.0-rc.1.tgz#0ecfcad935aebece3a68f4865cb2757598eb3cf6"
-  integrity sha1-Ds/K2TWuvs46aPSGXLJ1dZjrPPY=
+agora-meeting-sdk@1.0.0-rc.2:
+  version "1.0.0-rc.2"
+  resolved "https://registry.npmjs.org/agora-meeting-sdk/-/agora-meeting-sdk-1.0.0-rc.2.tgz#2bf6500fe8200cfeff2d70a780988df0b1f5fa89"
+  integrity sha512-IbxpAztuJtPROQ8ROuKVnR1VRNzChMhBQgVvkduMctSTlwpt8CQaKTVlB2pL29Pmibfx9U+H3gN96apv+apohg==
 
 ajv-errors@^1.0.0:
   version "1.0.1"
@@ -1744,7 +1744,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-env@^7.0.3:
+cross-env@7.0.3:
   version "7.0.3"
   resolved "https://registry.nlark.com/cross-env/download/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
   integrity sha1-hlJkspZ33AFbqEGJGJZd0jL8VM8=
@@ -2853,6 +2853,11 @@ jest-worker@^27.0.2:
     "@types/node" "*"
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
+
+js-md5@0.7.3:
+  version "0.7.3"
+  resolved "https://registry.nlark.com/js-md5/download/js-md5-0.7.3.tgz#b4f2fbb0b327455f598d6727e38ec272cd09c3f2"
+  integrity sha1-tPL7sLMnRV9ZjWcn447Ccs0Jw/I=
 
 js-tokens@^4.0.0:
   version "4.0.0"

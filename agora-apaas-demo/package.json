@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "agora-access-token": "2.0.4",
-    "agora-meeting-sdk": "1.0.0-rc.1"
+    "agora-meeting-sdk": "1.0.0-rc.2",
+    "js-md5": "0.7.3"
   },
   "devDependencies": {
     "@babel/core": "7.15.0",

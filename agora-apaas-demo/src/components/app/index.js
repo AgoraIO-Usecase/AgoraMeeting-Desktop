@@ -1,12 +1,19 @@
 import { AgoraMeetingSDK } from "agora-meeting-sdk";
 import { RtmTokenBuilder, RtmRole } from "agora-access-token";
+import MD5 from "js-md5";
 
 //  Please enter your appId
 const appId = "<YOUR APPID>";
 //  Please enter your appCertificate
 const appCertificate = "<YOUR APPCERTIFICATE>";
 
-const userId = "123456";
+//  Please enter any userName
+const userName = "user";
+const userId = MD5(userName);
+
+// Please enter any roomName
+const roomName = "123456";
+const roomId = MD5(roomName);
 
 const token = RtmTokenBuilder.buildToken(appId, appCertificate, userId, RtmRole.Rtm_User, 0);
 
@@ -21,10 +28,10 @@ export default class App {
     });
     AgoraMeetingSDK.launch(document.querySelector(`#${this.elem.id}`), {
       token: token,
+      userName: userName,
       userId: userId,
-      userName: "any",
-      roomId: "12345",
-      roomName: "demo",
+      roomName: roomName,
+      roomId: roomId,
       roomPassword: "",
       pretest: true,
       duration: 2700,
