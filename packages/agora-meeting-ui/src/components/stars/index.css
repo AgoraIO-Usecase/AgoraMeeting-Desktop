@@ -1,0 +1,30 @@
+.star-wrapper {
+  display: inline-block;
+  height: 22px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.star-wrapper .star + .star {
+  margin-left: 8px;
+}
+
+.star-wrapper .star {
+  height: 22px;
+  height: 22px;
+}
+
+.star-wrapper .star img {
+  height: 22px;
+  height: 22px;
+  display: inline-block;
+}
+
+.star-wrapper .text {
+  margin-left: 16px;
+  height: 22px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #989898;
+  line-height: 22px;
+}

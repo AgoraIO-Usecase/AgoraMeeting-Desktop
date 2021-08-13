@@ -1,0 +1,82 @@
+.metting-video-player-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 163px;
+  background: #464748;
+  overflow: hidden;
+}
+
+/* 左边 */
+.metting-video-player-list .left {
+  flex: 0 0 42px;
+  height: 100%;
+  width: 42px;
+  position: relative;
+  @apply cursor-pointer;
+}
+
+.metting-video-player-list .left .icon-left {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 17px;
+  height: 35px;
+  background: url('../../../../assets/leftgray.png');
+}
+
+.metting-video-player-list .left:hover .icon-left {
+  background: url('../../../../assets/leftblue.png');
+}
+
+/* 中间 */
+.metting-video-player-list .center {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.metting-video-player-list .center .video-item {
+  flex: 0 0 255px;
+  width: 255px;
+  height: 143px;
+  margin-right: 0;
+}
+
+.metting-video-player-list .center .video-item + .video-item {
+  margin-left: 20px;
+}
+
+.metting-video-player-list .center::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+/* 右边 */
+.metting-video-player-list .right {
+  flex: 0 0 42px;
+  height: 100%;
+  width: 42px;
+  position: relative;
+  @apply cursor-pointer;
+}
+
+.metting-video-player-list .right .icon-right {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 17px;
+  height: 35px;
+  background: url('../../../../assets/rightgray.png');
+}
+
+.metting-video-player-list .right:hover .icon-right {
+  background: url('../../../../assets/rightblue.png');
+}

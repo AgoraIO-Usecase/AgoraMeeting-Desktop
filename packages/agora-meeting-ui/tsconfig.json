@@ -1,0 +1,3 @@
+{
+  "extends": "../agora-meeting-sdk/tsconfig.json"
+}

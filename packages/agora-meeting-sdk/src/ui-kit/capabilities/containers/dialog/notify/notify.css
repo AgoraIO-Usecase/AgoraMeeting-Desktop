@@ -1,0 +1,55 @@
+/* 通知对话框 */
+.notice-content {
+  padding-top: 10px;
+  max-height: 364px;
+  min-height: 364px;
+  overflow-y: scroll;
+}
+
+.notice-content .time {
+  display: inline-block;
+  margin-left: 30px;
+  line-height: 12px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.notice-content .item {
+  height: 38px;
+  margin-left: 40px;
+  margin-right: 20px;
+  border-bottom: 1px solid #e9eff4;
+  border-radius: 2px;
+}
+
+.notice-content .content {
+  height: 38px;
+  line-height: 38px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #2e3848;
+}
+
+.notice-content .btn {
+  margin-left: 10px;
+  padding: 0 10px;
+  display: inline-block;
+  height: 24px;
+  background: #4da1ff;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.notice-content .btn .btn-text,
+.btn-time {
+  height: 17px;
+  line-height: 17px;
+}
+
+/* 倒计时 0 */
+.notice-content .btn.disable {
+  background: #b8b8b8;
+}

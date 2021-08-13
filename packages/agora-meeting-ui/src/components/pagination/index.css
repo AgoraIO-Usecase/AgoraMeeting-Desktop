@@ -1,0 +1,31 @@
+.metting-pagination {
+}
+
+.metting-pagination .rc-pagination-prev,
+.rc-pagination-item,
+.rc-pagination-next {
+  background: #292929;
+  border-radius: 6px;
+  border: 1px solid #262626;
+}
+
+.metting-pagination .rc-pagination-prev .rc-pagination-item-link,
+.rc-pagination-next .rc-pagination-item-link {
+  background: #292929;
+  border-radius: 6px;
+  border: 1px solid #262626;
+  color: white;
+}
+
+.metting-pagination .rc-pagination-item a {
+  color: #ffffff;
+}
+
+.metting-pagination .rc-pagination-item-active {
+  background: #4da1ff;
+}
+
+.metting-pagination .rc-pagination-jump-prev button,
+.rc-pagination-jump-next button {
+  color: #292929;
+}

@@ -1,0 +1,55 @@
+.zoom-position {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.whiteboard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#netless {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #ececf1;
+  border-radius: 4px;
+}
+
+.whiteboard .btn {
+  position: absolute;
+  top: 13px;
+  right: 75px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.whiteboard .btn.btn-apply {
+  background: #4da1ff;
+}
+
+.whiteboard .btn-abandon {
+  background: #ff5f51;
+}
+
+.whiteboard .btn.btn-end {
+  background: #ff5f51;
+}
+
+.whiteboard .btn.btn-end .icon-board-end {
+  margin-right: 4px;
+  width: 10px;
+  height: 10px;
+  background: url('../../../assets/icon_board_end@2x.png');
+}

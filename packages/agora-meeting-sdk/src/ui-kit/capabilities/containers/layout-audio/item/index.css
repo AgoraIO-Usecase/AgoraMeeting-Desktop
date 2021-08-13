@@ -1,0 +1,64 @@
+.audio-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  @apply cursor-pointer;
+}
+
+.audio-item.mic-enabled .avatar{
+  border: 5px solid #F8E71C;
+}
+
+.audio-item .avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.audio-item .item__bottom {
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 16px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 105px;
+  height: 30px;
+  background: #141415;
+  border-radius: 15px;
+  opacity: 0.8;
+  font-size: 0;
+}
+
+
+.audio-item .item__bottom .icon-speaker-on,
+.icon-speaker-off {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+}
+
+.audio-item .item__bottom .icon-speaker-on {
+  background: url('../../../../assets/stateSpeakerOn@2x.png');
+}
+
+.audio-item .item__bottom .icon-speaker-off {
+  background: url('../../../../assets/stateSpeakerOff@2x.png');
+}
+
+.audio-item .item__bottom .text {
+  height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 17px;
+  @apply truncate;
+}

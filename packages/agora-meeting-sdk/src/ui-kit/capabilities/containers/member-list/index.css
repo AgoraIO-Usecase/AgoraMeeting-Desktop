@@ -1,0 +1,120 @@
+.metting-member {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  background: rgba(255, 255, 255, 0.8);
+  height: 100%;
+}
+
+/* 头部 */
+.metting-member .member__header {
+  flex: 0 0 52px;
+  height: 52px;
+  padding: 0 18px 0 16px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px #e3e3e3 solid;
+}
+
+.metting-member .member__header .header__left {
+  flex: 1 1 auto;
+  height: 20px;
+  font-size: 14px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #8b92a9;
+  line-height: 20px;
+  -webkit-background-clip: text;
+}
+
+.metting-member .member__header .icon-close {
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/close@2x.png');
+}
+
+.metting-member .member__header .icon-search {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/icon_search@2x.png');
+}
+
+.metting-member .member__header .icon-close::before {
+  content: '';
+}
+
+/* 搜索 */
+.metting-member .member__search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  border-bottom: 1px solid #e9eff4;
+}
+
+.metting-member .member__search .input-search {
+  flex: 0 0 auto;
+  margin-left: 12px;
+  width: 190px;
+}
+
+.metting-member .member__search .icon-close {
+  width: 15px;
+  height: 15px;
+  background: url('../../../assets/close@2x.png');
+}
+
+.metting-member .member__search .text {
+  margin-left: 12px;
+  flex: 0 0 auto;
+  height: 21px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #4da1ff;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+/* 主体 */
+.metting-member .member__body {
+  display: inline-block;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+/* 底部 */
+.metting-member .member__footer {
+  flex: 0 0 74px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 74px;
+  border-top: 1px solid #e9eff4;
+  border-bottom: 1px solid #e9eff4;
+  box-sizing: border-box;
+}
+
+.member__footer .all-mute,
+.all-close-camera {
+  width: 112px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid #808fa3;
+  font-size: 12px;
+  font-weight: 400;
+  color: #323c47;
+  line-height: 30px;
+  text-align: center;
+  @apply cursor-pointer;
+}
+
+.member__footer .all-mute {
+  margin-right: 16px;
+}
+
+.member__footer .all-close-camera {
+}

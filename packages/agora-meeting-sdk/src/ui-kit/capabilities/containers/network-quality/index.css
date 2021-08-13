@@ -1,0 +1,36 @@
+.network-quality {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.network-quality .icon-bad {
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/signal_bad@2x.png');
+}
+.network-quality .icon-good {
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/signal_good@2x.png');
+}
+.network-quality .icon-excellent {
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/signal_good@2x.png');
+}
+.network-quality .icon-poor {
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/signal_poor@2x.png');
+}
+.network-quality .icon-unknown {
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/signal_unknown@2x.png');
+}
+
+.network-popover > .popover-content > .popover-inner > .popover-inner-content {
+  padding: 10px 20px;
+}

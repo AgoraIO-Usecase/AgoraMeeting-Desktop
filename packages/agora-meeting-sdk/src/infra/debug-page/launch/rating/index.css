@@ -1,0 +1,54 @@
+.rating {
+  position: relative;
+  width: 300px;
+  height: 100%;
+}
+
+.rating .rating-item + .rating-item {
+  margin-top: 20px;
+}
+
+.rating .rating-item {
+  display: flex;
+  align-items: top;
+  width: 100%;
+  min-height: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 20px;
+}
+
+.rating .rating-item .left {
+  flex: 0 0 105px;
+  text-align: left;
+  height: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 22px;
+}
+
+.rating .rating-item .right {
+  flex: 1 1 auto;
+}
+
+.rating .rating-item .right textarea {
+  width: 220px;
+  min-height: 60px;
+  border-radius: 2px;
+  border: 1px solid #e9eff4;
+}
+
+.rating .rating-item .right .btn-submit {
+  display: inline-block;
+  cursor: pointer;
+  width: 140px;
+  height: 32px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 32px;
+  text-align: center;
+  background: #4da1ff;
+}

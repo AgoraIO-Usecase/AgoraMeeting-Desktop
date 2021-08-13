@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+* {
+  @apply font-scenario;
+}
+
+.page-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 999999;
+}
+.page-loading.ppd-loading {
+  z-index: 11;
+}
+
+.fixed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.board-section {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.fixed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+/* 图标 */
+.icon {
+  content: '';
+  @apply cursor-pointer;
+  display: inline-block;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+
+@keyframes custom-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  transform-origin: center;
+  animation: custom-rotate 2s linear infinite; /*开始动画后无限循环，用来控制rotate*/
+}

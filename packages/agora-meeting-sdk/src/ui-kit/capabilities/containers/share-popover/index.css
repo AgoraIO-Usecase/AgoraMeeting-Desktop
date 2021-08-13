@@ -1,0 +1,55 @@
+/* 覆盖popover样式 */
+.share-popover {
+  width: 300px;
+  border-radius: 6px;
+  background: #2b2b2c;
+}
+
+.share-popover > .popover-content > .popover-arrow {
+  transform: translateX(-50%) translateY(110%) rotate(45deg);
+  background: #2b2b2c;
+  border-color: #2b2b2c;
+}
+
+.share-popover > .popover-content > .popover-inner {
+  background: #2b2b2c;
+  border: 1px solid #2a2a2a;
+  box-shadow: none;
+}
+
+.share-popover .item {
+  display: flex;
+  min-height: 30px;
+  color: #ffffff;
+  word-wrap: break-word;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 17px;
+}
+
+.share-popover .item .left {
+  flex: 0 0 72px;
+  width: 72px;
+  text-align: left;
+}
+
+.share-popover .item .right {
+  flex: 1 1 auto;
+  margin-left: 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.share-popover .copy-btn {
+  width: 192px;
+  height: 39px;
+  background: #4da1ff;
+  border-radius: 2px;
+}
+
+.share-popover .btn-wrapper {
+  margin-top: 20px;
+  margin-bottom: 14px;
+  text-align: center;
+}

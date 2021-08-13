@@ -1,0 +1,117 @@
+.audio-metting {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #3a3b3c;
+}
+
+/* 左边 */
+.audio-metting .left {
+  position: relative;
+  flex: 0 0 90px;
+  width: 90px;
+  height: 100%;
+}
+
+.audio-metting .icon-left__wrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 220px;
+  @apply cursor-pointer;
+}
+
+.audio-metting .icon-left__wrapper:hover .icon-left {
+  background: url('../../../assets/leftblue.png');
+}
+
+.audio-metting .left .icon-left {
+  width: 18px;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url('../../../assets/leftgray.png');
+}
+
+/* 主体 */
+.audio-metting .body {
+  position: relative;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+.audio-metting .body .render-list {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 770px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.audio-metting .body .render-list .item-wrapper {
+  flex: 0 0 20%;
+  height: 130px;
+  position: relative;
+}
+
+.audio-metting .body .render-list .item-wrapper:nth-child(n + 6) {
+  margin-top: 20px;
+}
+
+/* 底部 */
+.audio-metting .body .bottom {
+  position: absolute;
+  height: 120px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 底部分页器 */
+.audio-metting .body .bottom .pagination-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 右边 */
+.audio-metting .right {
+  flex: 0 0 90px;
+  height: 100%;
+}
+
+.audio-metting .right .icon-right__wrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 220px;
+  @apply cursor-pointer;
+}
+
+.audio-metting .icon-right__wrapper:hover .icon-right {
+  background: url('../../../assets/rightblue.png');
+}
+
+.audio-metting .right .icon-right {
+  width: 18px;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url('../../../assets/rightgray.png');
+}

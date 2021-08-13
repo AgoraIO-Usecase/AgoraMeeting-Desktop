@@ -1,0 +1,191 @@
+.metting-home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: url('../../../assets/background@2x.png');
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.metting-home .login {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  min-height: 700px;
+  height: auto;
+  background: #ffffff;
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* 头部 */
+.metting-home .login__header {
+  position: relative;
+  margin-top: 50px;
+}
+
+.metting-home .login__header .header__right {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 62px;
+}
+
+.metting-home .login__header .header__right .icon-setting {
+  margin-left: 10px;
+  margin-right: 3px;
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/setting@2x.png');
+}
+
+.metting-home .login__header .header__right .text {
+  height: 20px;
+  font-size: 14px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/* 中间 */
+.metting-home .login__center {
+  padding: 0 60px;
+  position: relative;
+  margin-top: 137px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login__center .logo-img {
+  flex: 0 0 auto;
+  width: 88px;
+  height: 59px;
+}
+
+.login__center .logo-text {
+  margin-top: 8px;
+  flex: 0 0 28px;
+  height: 28px;
+  font-size: 20px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #808fa3;
+  line-height: 28px;
+  margin-bottom: 52px;
+}
+
+.login__center .icon-close {
+  width: 20px;
+  height: 20px;
+  background: url('../../../assets/close@2x.png');
+  opacity: 0.5;
+}
+
+.login__center .icon-close:hover {
+  opacity: 1;
+}
+
+.login__center .icon-inactive {
+  width: 20px;
+  height: 20px;
+  background: url('../../../assets/inactive@2x.png');
+}
+
+.login__center .icon-close::before {
+  content: '';
+}
+
+.login__center .room-pwd-icon-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.home-popover > .popover-content > .popover-inner > .popover-inner-content {
+  padding: 10px;
+}
+
+.home-popover .popover-content {
+  font-size: 12px;
+  font-weight: 400;
+  color: #323c47;
+  line-height: 20px;
+  white-space: pre;
+}
+
+.login__center .btn-add {
+  margin-top: 22px;
+  height: 42px;
+  line-height: 42px;
+  width: 100%;
+  background: #4da1ff;
+  font-size: 14px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #ffffff;
+  border-radius: 2px;
+  @apply cursor-pointer;
+}
+
+.login__center .tip {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  background: #000000;
+  border-radius: 2px;
+  opacity: 0.75;
+  padding: 15px 10px 20px 10px;
+}
+
+.login__center .tip .icon-tip {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  background: url('../../../assets/horn@2x.png');
+}
+
+.login__center .input-wrapper + .input-wrapper {
+  margin-top: 20px;
+}
+
+.login__center .tip .text {
+  margin-left: 10px;
+  flex: 1 1 auto;
+  font-size: 12px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 17px;
+  text-align: left;
+}
+
+.login__center .checkbox-wrapper {
+  margin-top: 20px;
+  height: 18px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.login__center .checkbox-text {
+  margin-left: 10px;
+  height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 17px;
+}
+
+/* 底部 */
+.login__bottom {
+  height: 50px;
+}

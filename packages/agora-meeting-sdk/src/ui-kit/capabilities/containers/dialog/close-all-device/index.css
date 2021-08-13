@@ -1,0 +1,29 @@
+.close-all-device-dialog {
+}
+
+.close-all-device-dialog .content {
+  height: 24px;
+  font-size: 24px;
+  text-align: left;
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 24px;
+  width: 100%;
+  align-self: flex-start;
+}
+
+.close-all-device-dialog .item {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 20px;
+  align-self: flex-start;
+}
+
+.close-all-device-dialog .item .checkbox-text {
+  margin-left: 3px;
+}

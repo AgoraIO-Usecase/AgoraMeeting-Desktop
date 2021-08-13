@@ -1,0 +1,177 @@
+.meeting-header {
+  flex: 0 0 52px;
+  width: 100%;
+  height: 52px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: #3a3b3c;
+  box-sizing: border-box;
+}
+
+/* 左边 */
+.meeting-header .header__left {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.meeting-header .header__left .room-name {
+  display: inline-block;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 20px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meeting-header .header__left .room-time {
+  display: inline-block;
+  margin-left: 6px;
+  height: 17px;
+  font-size: 12px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #989898;
+  line-height: 17px;
+  width: 50px;
+}
+
+.meeting-header .header__left .icon-invite,
+.icon-setting {
+  margin-left: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+.meeting-header .icon-invite {
+  background: url('../../../assets/invite@2x.png');
+}
+
+.meeting-header .icon-setting {
+  background: url('../../../assets/setting@2x.png');
+}
+
+/* 中间 */
+.meeting-header .header__cener {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meeting-header .header__cener .record__wrapper {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 28px;
+  background: #000000;
+  border-radius: 2px;
+  opacity: 0.75;
+}
+
+.meeting-header .header__cener .record__wrapper .text {
+  margin-right: 6px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28px;
+}
+
+.meeting-header .header__cener .icon-recording {
+  margin-left: 7px;
+  margin-right: 4px;
+  width: 20px;
+  height: 20px;
+  background: url('../../../assets/icon_head_recording@2x.png');
+}
+
+.meeting-header .header__cener .icon-recording::before {
+  content: '';
+}
+
+/* 右边 */
+.meeting-header .header__right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.meeting-header .header__right .icon-notification {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: url('../../../assets/layout-flat@2x.png');
+}
+
+.meeting-header .header__right .has-notice:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  background: #ff5f51;
+  border-radius: 50%;
+}
+
+.meeting-header .header__right .layout-wrapper {
+  margin-left: 10px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-radius: 2px;
+  border: 1px solid #989898;
+  @apply cursor-pointer;
+}
+
+.meeting-header .layout-wrapper .text {
+  margin-left: 5px;
+  height: 32px;
+  font-size: 12px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #cccccc;
+  line-height: 32px;
+}
+
+.meeting-header .layout-wrapper .layout-flat {
+  width: 20px;
+  height: 20px;
+  background: url('../../../assets/layout-flat@2x.png');
+}
+
+.meeting-header .layout-wrapper .layout-speech {
+  width: 20px;
+  height: 20px;
+  background: url('../../../assets/layout-speech@2x.png');
+}
+
+.meeting-header .header__right .icon-fullscreen {
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+  background: url('../../../assets/full-screen@2x.png');
+}
+
+.meeting-header .header__right .icon-narrow {
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+  background: url('../../../assets/icon_narrow@2x.png');
+}
+
+.meeting-header .header__right .icon-notification {
+  width: 32px;
+  height: 32px;
+  background: url('../../../assets/notice@2x.png');
+}

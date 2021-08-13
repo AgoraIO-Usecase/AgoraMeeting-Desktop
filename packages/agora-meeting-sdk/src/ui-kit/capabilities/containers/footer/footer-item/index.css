@@ -1,0 +1,169 @@
+.footer-item .icon {
+  @apply cursor-pointer;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-position: 50%;
+  content: ' ';
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+
+.footer-item .icon::before {
+  content: '';
+}
+
+.footer-item + .footer-item {
+  margin-left: 10px;
+}
+
+.footer-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  @apply cursor-pointer;
+}
+
+.footer-item .icon-wrapper {
+  position: relative;
+  width: 60px;
+  height: 40px;
+}
+
+.footer-item .record-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 40px;
+}
+
+.footer-item .icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+}
+
+.footer-item .icon-audio {
+  background: url('../../../../assets/icon_mute@2x.png');
+}
+.footer-item .icon-video {
+  background: url('../../../../assets/icon_videoOff.png');
+}
+
+.footer-item .icon-screen-share {
+  background: url('../../../../assets/icon_screenShare@2x.png');
+}
+.footer-item .icon-record {
+  background: url('../../../../assets/icon_recording@2x.png');
+}
+.footer-item .icon-chat {
+  background: url('../../../../assets/icon_chat@2x.png');
+}
+.footer-item .icon-members {
+  background: url('../../../../assets/icon_user@2x.png');
+}
+
+.footer-item .text {
+  height: 17px;
+  font-size: 12px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 17px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.footer-item .number {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  background: #ff5749;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-item .countdown {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  width: 33px;
+  height: 33px;
+  background: rgba(42, 42, 42, 0.9);
+  border: 2px solid #818181;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.footer-item .countdown .countdown-text {
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 11px;
+}
+
+.footer-item.active .icon-audio {
+  background: url('../../../../assets/icon_unmute@2x.png');
+}
+.footer-item.active .icon-video {
+  background: url('../../../../assets/icon_videoOn.png');
+}
+.footer-item.active .icon-screen-share {
+  background: url('../../../../assets/icon_screenShareBlue@2x.png');
+}
+
+.footer-item.active .icon-record {
+  background: url('../../../../assets/icon_RecordingBlue@2x.png');
+}
+
+.footer-item.active .icon-chat {
+  background: url('../../../../assets/icon_chatBlue2@2x.png');
+}
+
+.footer-item.active .icon-members {
+  background: url('../../../../assets/icon_userBlue2@2x.png');
+}
+
+.footer-item .icon-record-suspend {
+  background: url('../../../../assets/icon_record_suspend@2x.png');
+}
+
+.footer-item .icon-record-start {
+  background: url('../../../../assets/icon_record_start@2x.png');
+}
+
+.footer-item .icon-record-end {
+  background: url('../../../../assets/icon_record_end@2x.png');
+}
+
+.footer-item.active .text {
+  color: #4da1ff;
+}
+
+.footer-item.active .text__left {
+  color: white;
+  margin-right: 6px;
+}
+
+.footer-item.active .text__right {
+  color: white;
+}

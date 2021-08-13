@@ -1,0 +1,313 @@
+.setting {
+  display: flex;
+  width: 100%;
+  height: 460px;
+  position: relative;
+}
+
+/* 左边 */
+.setting .setting__left {
+  flex: 0 0 130px;
+  width: 130px;
+  border-left: 1px solid #e9eff4;
+  box-sizing: border-box;
+}
+
+.setting .setting__left .tab-item {
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  color: #323c47;
+  line-height: 40px;
+  text-align: center;
+  @apply cursor-pointer;
+}
+
+.setting .setting__left .tab-item.active {
+  background: #f4f8f9;
+  color: #4da1ff;
+}
+
+/* 右边 */
+.setting .setting__right {
+  flex: 1 1 auto;
+  width: 482px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.setting .select {
+  font-size: 13px;
+}
+
+.setting .device-choose {
+  margin-bottom: 30px;
+}
+.setting .device-title,
+.setting .device-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #586376;
+}
+
+.setting .device-volume {
+  margin-top: 15px;
+  @apply flex;
+  align-items: center;
+}
+
+.setting .device-volume .slider {
+  margin-left: 8px;
+  @apply flex-1;
+}
+
+/* 音视频 */
+.media-setting .item {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 20px;
+}
+
+.media-setting .item + .item {
+  margin-top: 20px;
+}
+
+.media-setting .item .checkbox-text {
+  margin-left: 9px;
+}
+
+/* 房间 */
+.room-setting {
+}
+
+.room-setting .item {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 20px;
+}
+
+/* 个人设置 */
+.person-setting {
+}
+
+.person-setting .inout—text {
+  margin-bottom: 5px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #323c47;
+  line-height: 20px;
+}
+
+/* 房间设置 */
+.room-setting .body {
+}
+
+.room-setting .body .item {
+  height: 32px;
+  width: 100%;
+}
+
+.room-setting .body .item + .item {
+  margin-top: 20px;
+}
+
+.room-setting .body .item .props {
+  display: inline-block;
+  width: 90px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #323c47;
+  line-height: 32px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.room-setting .body .item .text {
+  margin-left: 20px;
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #989898;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* disabled */
+.room-setting .body .item input:disabled {
+  background-color: #eee;
+}
+
+.room-setting .body {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9eff4;
+}
+
+.room-setting .footer {
+  margin-top: 20px;
+}
+
+.room-setting .footer .item + .item {
+  margin-top: 24px;
+}
+
+.room-setting .footer input {
+  margin-right: 9px;
+}
+
+/* 关于设置 */
+.about-setting {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.about-setting .logo__wrapper {
+  position: relative;
+  height: 60px;
+  width: 100%;
+}
+
+.about-setting .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  width: 82px;
+}
+
+.about-setting .title {
+  margin-top: 8px;
+  height: 28px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #2f343b;
+  line-height: 28px;
+}
+
+.about-setting .body {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #989898;
+  line-height: 16px;
+}
+
+.about-setting .about-btn {
+  width: 164px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 44px;
+  border-radius: 8px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.about-setting .about-btn.register {
+  background: #4da1ff;
+  color: #ffffff;
+}
+
+.about-setting .about-btn.look {
+  background: #ffffff;
+  color: #4da1ff;
+  border: 1px solid #4da1ff;
+}
+
+.about-setting .footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.about-setting .footer .footer-content {
+  width: 100%;
+  height: auto;
+}
+
+.about-setting .footer .footer-content .item {
+  height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #2e3848;
+  line-height: 17px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.about-setting .footer .footer-content .item + .item {
+  margin-left: 12px;
+}
+
+.about-setting .footer .net {
+  margin-top: 10px;
+  height: 17px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #989898;
+  line-height: 17px;
+}
+
+/* log 设置 */
+.log-setting {
+}
+
+.log-setting .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 124px;
+  height: 32px;
+  background: #4da1ff;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 32px;
+  text-align: center;
+}
+
+.log-setting .btn.btn-uploading,
+.btn.btn-success {
+  background: #e4f3fe;
+  color: #323c47;
+}
+
+.log-setting .btn.btn-fail {
+  background: #323c47;
+}
+
+.log-setting .btn .text {
+  flex: 0 0 auto;
+  height: 32px;
+  line-height: 32px;
+}
+
+.log-setting .icon-loading {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  background: url('../../../assets/icon_loading@2x.png');
+}

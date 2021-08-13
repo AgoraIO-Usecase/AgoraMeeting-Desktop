@@ -1,0 +1,39 @@
+.popover-screen {
+  display: flex;
+  justify-content: center;
+}
+
+.popover-screen .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 107px;
+  height: 90px;
+  border-radius: 2px;
+}
+
+.popover-screen .item:hover {
+  background: #565656;
+  @apply cursor-pointer;
+}
+
+.popover-screen .item .item-img {
+  margin-top: 14px;
+  flex: 0 0 40px;
+  width: 47px;
+  height: 40px;
+}
+
+.popover-screen .item .item-text {
+  margin-top: 9px;
+  flex: 0 0 17px;
+  height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 17px;
+}
+
+.popover-screen .item .item-text.active {
+  color: #4da1ff;
+}

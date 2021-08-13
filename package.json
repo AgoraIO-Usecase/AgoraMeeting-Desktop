@@ -1,0 +1,74 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "resolutions": {
+    "@babel/core": "7.13.15",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.13.8",
+    "@babel/plugin-syntax-decorators": "7.12.13",
+    "@babel/plugin-syntax-dynamic-import": "7.8.3",
+    "@babel/plugin-transform-runtime": "7.13.15",
+    "@babel/preset-env": "7.13.15",
+    "@babel/preset-react": "7.13.13",
+    "@babel/preset-typescript": "7.13.0",
+    "@babel/runtime-corejs3": "7.13.10"
+  },
+  "devDependencies": {
+    "dayjs": "1.10.4",
+    "just-scripts": "1.5.3",
+    "lerna": "3.22.1",
+    "npm-run-all": "4.1.5",
+    "typescript": "4.2.3"
+  },
+  "agora_electron": {
+    "electron_version": "7.1.2",
+    "prebuilt": true
+  },
+  "description": "[English](README.zh.md)*",
+  "version": "1.0.0",
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "release:apaas:sdk": "lerna exec --scope=agora-meeting-sdk npm run pack:npm",
+    "release:classroom:sdk": "run-s release:apaas:sdk",
+    "release:electron:mac": "run-s release:demo pack:electron:mac",
+    "release:electron:win": "run-s release:demo pack:electron:win",
+    "release:core": "run-s build:rte-sdk build:meeting-core",
+    "release:demo": "run-s build:apaas",
+    "dev": "run-s run:demo",
+    "dev:apaas": "run-s run:demo",
+    "build:apaas": "run-s build:demo",
+    "dev:electron": "run-s build:dev:rte-sdk build:dev:meeting-core build:dev:plugin build:dev:widget run:demo:electron",
+    "dev:ui-kit": "lerna exec --scope=agora-meeting-ui yarn storybook",
+    "pack:sdk": "run-s build:rte-sdk build:classroom:sdk",
+    "build:classroom:sdk": "lerna exec --scope=agora-meeting-sdk npm run pack:npm",
+    "build:dev:rte-sdk": "lerna exec --scope=agora-rte-sdk npm run build:dev",
+    "build:rte-sdk": "lerna exec --scope=agora-rte-sdk npm run build",
+    "build:dev:core": "lerna exec --scope=agora-meeting-core npm run build:dev:js",
+    "build:core": "lerna exec --scope=agora-meeting-core npm run build:js",
+    "build:demo": "lerna exec --scope=agora-meeting-sdk npm run build",
+    "run:build:rte-sdk": "run-s build:rte-sdk",
+    "run:demo": "lerna exec --scope=agora-meeting-sdk npm run dev",
+    "run:demo:electron": "lerna exec --scope=agora-meeting-sdk npm run electron",
+    "run:apaas": "lerna exec --scope=agora-apaas-demo npm run dev",
+    "test": "lerna run test",
+    "ci:build:web": "yarn release:demo",
+    "ci:build:electron:win": "yarn release:electron:win",
+    "ci:build:electron:mac": "yarn release:electron:mac",
+    "ci:build:classroom:sdk": "yarn release:classroom:sdk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgoraIO-Usecase/AgoraMeeting-Desktop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgoraIO-Usecase/AgoraMeeting-Desktop/issues"
+  },
+  "homepage": "https://github.com/AgoraIO-Usecase/AgoraMeeting-Desktop#readme",
+  "dependencies": {}
+}

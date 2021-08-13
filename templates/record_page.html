@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- templates -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cloud Recording</title>
+    <script src="./edu_sdk.bundle.js"></script>
+  </head>
+
+  <body>
+    <style>
+      #root1 {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <div id="root1"></div>
+    <script type="text/javascript">
+      function useParams(location) {
+        const searchString = location.href.split('?').pop();
+        const urlParams = new URLSearchParams(location.href.split('?').pop());
+        const audienceParams = {};
+        for (let key of urlParams.keys()) {
+          audienceParams[key] = urlParams.get(key);
+        }
+        console.log('urlParams ', audienceParams);
+        return audienceParams;
+      }
+
+      const {
+        userId,
+        userName,
+        roomId,
+        roleType,
+        roomType,
+        pretest,
+        token,
+        startTime,
+        duration,
+        totalPeople,
+        recordUrl,
+        appId,
+        userRole,
+        roomName,
+        roomPassword,
+      } = useParams(window.location);
+
+      AgoraMeetingSDK.init({
+        appId,
+      });
+      AgoraMeetingSDK.launch(document.querySelector('#root1'), {
+        userId,
+        userName,
+        roomId,
+        roomName,
+        roomPassword,
+        roleType: Number(roleType),
+        roomType: Number(roomType),
+        pretest: false,
+        token,
+        cameraAccess: false,
+        micAccess: false,
+        startTime,
+        duration,
+        totalPeople,
+        recordUrl,
+        appId,
+        userRole,
+        isRobot: true,
+        listener: (evt, args) => {
+          console.log('evt', evt, args);
+        },
+      }).then(() => {
+        console.log('start launch');
+      });
+    </script>
+  </body>
+</html>

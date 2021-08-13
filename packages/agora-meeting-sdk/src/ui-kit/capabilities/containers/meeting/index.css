@@ -1,0 +1,48 @@
+.sb-show-main.sb-main-padded {
+  padding: 0;
+}
+
+.metting {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+/* 左边整体布局 */
+.metting .page {
+  position: relative;
+  width: 100vw;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.metting .page .body {
+  flex: 1 1 auto;
+}
+
+/* 右边抽屉布局 */
+.metting .drawer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.metting .drawer-show {
+  width: 260px;
+}
+
+.metting .drawer .drawer-item {
+  flex: 1 1 auto;
+}
+
+/* 通知部分 */
+.metting .notification-wrapper {
+  position: absolute;
+  left: 40px;
+  bottom: 90px;
+}

@@ -1,0 +1,132 @@
+.layout-tile {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #3a3b3c;
+}
+
+/* 左边 */
+.layout-tile .left {
+  position: relative;
+  flex: 0 0 90px;
+  width: 90px;
+  height: 100%;
+}
+
+.layout-tile .icon-left__wrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 220px;
+  @apply cursor-pointer;
+}
+
+.layout-tile .icon-left__wrapper:hover .icon-left {
+  background: url('../../../assets/leftblue.png');
+}
+
+.layout-tile .left .icon-left {
+  width: 18px;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url('../../../assets/leftgray.png');
+}
+
+/* 主体 */
+.layout-tile .body {
+  position: relative;
+  display: grid;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+/* 分页器 */
+.layout-tile .body .bottom {
+  position: absolute;
+  height: 120px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.layout-tile .body .bottom .pagination-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 右边 */
+.layout-tile .right {
+  flex: 0 0 90px;
+  height: 100%;
+}
+
+.layout-tile .right .icon-right__wrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 220px;
+  @apply cursor-pointer;
+}
+
+.layout-tile .icon-right__wrapper:hover .icon-right {
+  background: url('../../../assets/rightblue.png');
+}
+
+.layout-tile .right .icon-right {
+  width: 18px;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url('../../../assets/rightgray.png');
+}
+
+.layout-tile .one-cell {
+  padding-top: 95px;
+  padding-bottom: 66px;
+  flex: 1;
+}
+
+.layout-tile .two-cell {
+  padding-top: 95px;
+  padding-bottom: 66px;
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(630px, 1fr));
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.layout-tile .four-cell {
+  padding-top: 95px;
+  padding-bottom: 75px;
+  grid-template-columns: repeat(auto-fill, minmax(607px, 1fr));
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.layout-tile .nine-cell {
+  padding-top: 95px;
+  padding-bottom: 64px;
+  grid-template-columns: repeat(auto-fill, minmax(402px, 1fr));
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.layout-tile .sixteen-cell {
+  padding-top: 40px;
+  padding-bottom: 120px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+

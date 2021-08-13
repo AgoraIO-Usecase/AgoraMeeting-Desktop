@@ -1,0 +1,76 @@
+.metting-menu {
+  @apply cursor-pointer;
+}
+
+/* 黑色主题 */
+.metting-menu.black {
+  width: 123px;
+  border-radius: 8px;
+  opacity: 0.75;
+}
+
+.metting-menu.black .metting-menu-item {
+  height: 36px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+
+.metting-menu.black .metting-menu-item:first-child {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.metting-menu.black .metting-menu-item:last-child {
+  border-radius: 0px 0px 8px 8px;
+}
+
+.metting-menu.black .metting-menu-item:last-child:first-child {
+  border-radius: 8px;
+}
+
+.metting-menu.black .metting-menu-item + .metting-menu-item {
+  margin-top: 1px;
+}
+
+.metting-menu.black .metting-menu-item .text {
+  height: 20px;
+  font-size: 14px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 20px;
+}
+
+/* 白色主题 */
+.metting-menu.white {
+  width: 110px;
+  background: #ffffff;
+  border: 1px solid #e9eff4;
+}
+
+.metting-menu.white .metting-menu-item {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metting-menu.white .metting-menu-item .text {
+  height: 17px;
+  font-size: 12px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #6d7278;
+  line-height: 17px;
+}
+
+.metting-menu.white .metting-menu-item:hover {
+  background: #e9eff4;
+}
+
+.metting-menu.white .metting-menu-item:hover .text {
+  color: #2e3848;
+}
