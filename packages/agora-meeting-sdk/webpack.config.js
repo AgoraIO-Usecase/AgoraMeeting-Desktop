@@ -46,11 +46,6 @@ module.exports = {
         __dirname,
         '../agora-meeting-ui/src/utilities',
       ),
-      'agora-meeting-core': path.resolve(
-        __dirname,
-        '../agora-meeting-core/src',
-      ),
-      'agora-rte-sdk': path.resolve(__dirname, '../agora-rte-sdk/src'),
     },
   },
   module: {

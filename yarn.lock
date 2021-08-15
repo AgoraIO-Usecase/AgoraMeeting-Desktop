@@ -4913,9 +4913,9 @@
     "@types/react" "*"
 
 "@types/react@*":
-  version "17.0.17"
-  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.17.tgz#1772d3d5425128e0635a716f49ef57c2955df055"
-  integrity sha512-nrfi7I13cAmrd0wje8czYpf5SFbryczCtPzFc6ijqvdjKcyA3tCvGxwchOUlxb2ucBPuJ9Y3oUqKrRqZvrz0lw==
+  version "17.0.18"
+  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.18.tgz#4109cbbd901be9582e5e39e3d77acd7b66bb7fbe"
+  integrity sha512-YTLgu7oS5zvSqq49X5Iue5oAbVGhgPc5Au29SJC4VeE17V6gASoOxVkUDy9pXFMRFxCWCD9fLeweNFizo3UzOg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -5781,7 +5781,7 @@ agora-access-token@2.0.4:
     crc-32 "1.2.0"
     cuint "0.2.2"
 
-agora-meeting-core@^1.0.1-rc.1:
+agora-meeting-core@1.0.1-rc.1:
   version "1.0.1-rc.1"
   resolved "https://registry.npmjs.org/agora-meeting-core/-/agora-meeting-core-1.0.1-rc.1.tgz#90173e5e7a2f0f55334261fc2e07aec39322275d"
   integrity sha512-E57dD2zm/g+vdliB/WetqudPfP2+fiJkEtjufevlQYRyIEaS6kBQVB7evjf+NXYcUdHZpXXbXSVfSSIryt15hg==
@@ -5802,6 +5802,44 @@ agora-meeting-core@^1.0.1-rc.1:
     rxjs "6.6.6"
     uuid "3.3.3"
     white-web-sdk "2.12.14"
+
+agora-meeting-sdk@1.0.1-rc.2:
+  version "1.0.1-rc.2"
+  resolved "https://registry.npmjs.org/agora-meeting-sdk/-/agora-meeting-sdk-1.0.1-rc.2.tgz#4a8745a4c6133db473d8a45a61e0154a6069b86f"
+  integrity sha512-QVMK8OkDLSGfa7j8P9OZVhuOavalEsoBvPRawhb9WWVWlMFmXUvqB+9vrlYOjkOpWt4SutYVkJuVNZhthk6p0A==
+  dependencies:
+    "@netless/fetch-progress" "0.0.1"
+    "@netless/iframe-bridge" "2.0.13"
+    "@tailwindcss/forms" "0.2.1"
+    "@types/react-transition-group" "4.4.1"
+    "@zip.js/zip.js" "2.2.22"
+    adm-zip "0.4.14"
+    agora-access-token "2.0.4"
+    animate.css "4.1.1"
+    bowser "1.9.4"
+    fetch-progress "1.3.0"
+    i18next "20.1.0"
+    jszip "3.6.0"
+    mobx "5.15.4"
+    mobx-react "6.3.1"
+    pinyinlite "1.2.1"
+    rc-notification "4.4.0"
+    rc-select "12.1.6"
+    rc-slider "9.7.1"
+    rc-tabs "11.7.3"
+    rc-tooltip "5.1.0"
+    rc-trigger "5.2.3"
+    rc-util "5.8.1"
+    react "17.0.0"
+    react-dom "17.0.0"
+    react-draggable "4.4.3"
+    react-i18next "11.8.12"
+    react-router "5.2.0"
+    react-select "4.3.0"
+    react-transition-group "4.4.1"
+    workbox-range-requests "6.1.2"
+    workbox-strategies "6.1.1"
+    zlib "1.0.5"
 
 airbnb-js-shims@^2.2.1:
   version "2.2.1"
@@ -8499,7 +8537,14 @@ cross-env@6.0.3:
   dependencies:
     cross-spawn "^7.0.0"
 
-cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.npmjs.org/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
+
+cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
@@ -9657,9 +9702,9 @@ ejs@^2.6.1:
   integrity sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.3.793:
-  version "1.3.805"
-  resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.805.tgz#a0873393a3b027ec60bdaf22a19c4946688cf941"
-  integrity sha512-uUJF59M6pNSRHQaXwdkaNB4BhSQ9lldRdG1qCjlrAFkynPGDc5wPoUcYEQQeQGmKyAWJPvGkYAWmtVrxWmDAkg==
+  version "1.3.806"
+  resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.806.tgz#21502100f11aead6c501d1cd7f2504f16c936642"
+  integrity sha512-AH/otJLAAecgyrYp0XK1DPiGVWcOgwPeJBOLeuFQ5l//vhQhwC9u6d+GijClqJAmsHG4XDue81ndSQPohUu0xA==
 
 element-resize-detector@^1.2.2:
   version "1.2.3"
@@ -20932,10 +20977,10 @@ snyk-cpp-plugin@2.2.1:
     hosted-git-info "^3.0.7"
     tslib "^2.0.0"
 
-snyk-docker-plugin@4.22.1:
-  version "4.22.1"
-  resolved "https://registry.npmjs.org/snyk-docker-plugin/-/snyk-docker-plugin-4.22.1.tgz#09283bfb7beb98553abde0719e96bccfd5bac0d9"
-  integrity sha512-fpXGkBu69Vb5meSrq0KjSKr0nlibA8z18fuH/O8HuDh1b5XyqKNz412njybpJtW07JPpA9rKX9gewRBZWch6fQ==
+snyk-docker-plugin@4.23.0:
+  version "4.23.0"
+  resolved "https://registry.npmjs.org/snyk-docker-plugin/-/snyk-docker-plugin-4.23.0.tgz#c1762b7366da4906ad61113c7ddf830050b2ef28"
+  integrity sha512-hcQnDH6kN+Q9FU5/ulqfS/zmrM3YYM5cuCBjU9SZlDE/U3kpqDFePqHPmDdUBuQCdT0/3Os5A3qyg9Y7iNz8fg==
   dependencies:
     "@snyk/dep-graph" "^1.28.0"
     "@snyk/rpm-parser" "^2.0.0"
@@ -20949,7 +20994,7 @@ snyk-docker-plugin@4.22.1:
     gunzip-maybe "^1.4.2"
     mkdirp "^1.0.4"
     semver "^7.3.4"
-    snyk-nodejs-lockfile-parser "1.35.1"
+    snyk-nodejs-lockfile-parser "1.36.0"
     tar-stream "^2.1.0"
     tmp "^0.2.1"
     tslib "^1"
@@ -21040,11 +21085,12 @@ snyk-nodejs-lockfile-parser@1.35.0:
     tslib "^1.9.3"
     uuid "^8.3.0"
 
-snyk-nodejs-lockfile-parser@1.35.1:
-  version "1.35.1"
-  resolved "https://registry.npmjs.org/snyk-nodejs-lockfile-parser/-/snyk-nodejs-lockfile-parser-1.35.1.tgz#bd7da418637acadbbb011ee03e1db3c9ba998842"
-  integrity sha512-NiXN+MdWaZxseXVDgCM4CZ5aBgI5LloUbwUP9c3oMZDih9Zj6Vf5edDcL8eM3BGl+a6LceJzB6w+xrIqKCXgQA==
+snyk-nodejs-lockfile-parser@1.36.0:
+  version "1.36.0"
+  resolved "https://registry.npmjs.org/snyk-nodejs-lockfile-parser/-/snyk-nodejs-lockfile-parser-1.36.0.tgz#4591cbc3e94a62df2ac15041ff09f60f5b3c0354"
+  integrity sha512-IYg1Kbz/juuXrZNe7UoWTyHV+QKDveahxM3y1h/gZDwoOC9fgyVlC0p0v/RyeYRtvScxQcJchCr94V1VStwroA==
   dependencies:
+    "@snyk/dep-graph" "^1.28.0"
     "@snyk/graphlib" "2.1.9-patch.3"
     "@yarnpkg/core" "^2.4.0"
     "@yarnpkg/lockfile" "^1.1.0"
@@ -21055,6 +21101,7 @@ snyk-nodejs-lockfile-parser@1.35.1:
     lodash.isempty "^4.4.0"
     lodash.set "^4.3.2"
     lodash.topairs "^4.3.0"
+    semver "^7.3.5"
     snyk-config "^4.0.0-rc.2"
     tslib "^1.9.3"
     uuid "^8.3.0"
@@ -21189,9 +21236,9 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.231.0:
-  version "1.680.0"
-  resolved "https://registry.npmjs.org/snyk/-/snyk-1.680.0.tgz#d05199876147d2bfef0dc86488f01f04349d4b84"
-  integrity sha512-svx0PyD+DFlJ1TPt2FN4nZLSv/YGBDGo0TpfwkBECvJyDzjWYm54QXhv9f3UvZOlDAMNey1pin7RKTH4XUm1Lg==
+  version "1.681.0"
+  resolved "https://registry.npmjs.org/snyk/-/snyk-1.681.0.tgz#ff0300a94deffd5e82d14145a6b97ed9486eb71f"
+  integrity sha512-SzzCytuUzKfTLd54cQw1FN8j/iRmucJ+IsVpVJlHwCUgXxKi1M80d5vaVXsfCWk42L0Gvh4I/YkllJC8QQXqig==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
@@ -21242,7 +21289,7 @@ snyk@^1.231.0:
     semver "^6.0.0"
     snyk-config "4.0.0"
     snyk-cpp-plugin "2.2.1"
-    snyk-docker-plugin "4.22.1"
+    snyk-docker-plugin "4.23.0"
     snyk-go-plugin "1.17.0"
     snyk-gradle-plugin "3.16.1"
     snyk-module "3.1.0"

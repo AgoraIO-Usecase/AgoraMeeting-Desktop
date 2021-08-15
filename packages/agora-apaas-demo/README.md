@@ -11,8 +11,15 @@
 
 Install deps from project root `yarn` or `npm i`
 
+### config
+
+enter src/components/app/index.js
+
+input your appId and appCertificate
+
+
 ### Start development server with:
 
-`yarn start:dev` or `npm run start:dev`
+`yarn run dev` or `npm run dev`
 
 
