@@ -50,7 +50,7 @@ export const ScreenShare: FC<ScreenShareProps> = ({
                         <div className="program-item-img" style={item.image ? {backgroundImage: `url(data:image/png;base64,${item.image})`} : {}}>
                         </div>
                         <div className="program-item-title">
-                            {item.id === currentActiveId  ? ( <Icon type="checked" size={16} color={'#357BF6'}/>) : ""}
+                            {item.id === currentActiveId  ? ( <Icon type="check" size={16} color={'#357BF6'}/>) : ""}
                             <div className="title-text">{item.title}</div>
                         </div>
                     </div>

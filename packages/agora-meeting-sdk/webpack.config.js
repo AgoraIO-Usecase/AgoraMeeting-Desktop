@@ -45,7 +45,7 @@ module.exports = {
       '~utilities': path.resolve(
         __dirname,
         '../agora-meeting-ui/src/utilities',
-      ),
+      )
     },
   },
   module: {
@@ -71,9 +71,9 @@ module.exports = {
         include: [
           path.resolve(__dirname, 'src'),
           path.resolve(__dirname, '../agora-meeting-ui/src'),
-          path.resolve(__dirname, '../../node_modules/rc-slider'),
           path.resolve(__dirname, '../../node_modules/rc-pagination'),
           path.resolve(__dirname, '../../node_modules/rc-notification'),
+          path.resolve(__dirname, '../../node_modules/rc-slider'),
         ],
         use: [
           {
@@ -179,15 +179,5 @@ module.exports = {
         ],
       },
     }),
-    // new InjectManifest({
-    //   // injectionPoint: '__WB_MANIFEST',
-    //   // importWorkboxFrom: 'local',
-    //   // importsDirectory: path.join(__dirname, 'public'),
-    //   // swSrc: path.join(__dirname, swSrcPath),
-    //   // swSrc: path.join(process.cwd(), '/src/sw/index.worker.js'),
-    //   swDest: 'serviceWorker.js',
-    //   include: [],
-    //   exclude: [/\.map$/, /manifest$/, /\.htaccess$/, /sw\.js$/],
-    // }),
   ],
 };

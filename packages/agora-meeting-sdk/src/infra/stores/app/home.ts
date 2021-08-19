@@ -15,4 +15,5 @@ export class HomeStore {
     GlobalStorage.save(this.launchKey, this.launchOption)
   }
 
+
 }

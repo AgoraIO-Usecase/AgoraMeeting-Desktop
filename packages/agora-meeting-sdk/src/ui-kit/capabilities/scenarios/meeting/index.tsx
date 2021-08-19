@@ -1,5 +1,5 @@
 import { useRoomContext } from 'agora-meeting-core';
-import { useEffectOnce } from '@/infra/hooks/utils';
+import { useEffectOnce } from '@/infra/hooks/index';
 import { useEffect } from 'react';
 import { observer } from 'mobx-react';
 import { MeetingContainer } from '@/ui-kit/capabilities/containers/meeting';

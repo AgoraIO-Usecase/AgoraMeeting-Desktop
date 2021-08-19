@@ -6,6 +6,9 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import MD5 from 'js-md5';
 import { useLayoutEffect } from 'react';
+import { GlobalStorage } from '../../utils';
+
+const DEFAULT_IN_OUT_NOTIFICATION_LIMIT_COUNT = 50;
 
 export const HomePage = observer(() => {
   const homeStore = useHomeStore();
@@ -32,7 +35,7 @@ export const HomePage = observer(() => {
     password: '',
     openMic: true,
     openCamera: true,
-    userInOutNotificationLimitCount: 50,
+    userInOutNotificationLimitCount: DEFAULT_IN_OUT_NOTIFICATION_LIMIT_COUNT,
   };
 
   const history = useHistory();
@@ -58,7 +61,9 @@ export const HomePage = observer(() => {
       openCamera: text.openCamera,
       duration: 2700,
       totalPeople: 1000,
-      userInOutNotificationLimitCount: text.userInOutNotificationLimitCount,
+      userInOutNotificationLimitCount:
+        GlobalStorage.read('inOutLimitCount') ||
+        text.userInOutNotificationLimitCount,
     });
     history.push('/launch');
   };
@@ -75,9 +80,6 @@ export const HomePage = observer(() => {
         text.openMic = v;
       }}
       onChangeCamera={(v) => (text.openCamera = v)}
-      onChangeUserInOutNotificationLimitCount={(v) => {
-        text.userInOutNotificationLimitCount = v;
-      }}
       join={onClickJoin}></MettingHome>
   );
 });

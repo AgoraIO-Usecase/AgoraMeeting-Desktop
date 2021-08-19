@@ -43,3 +43,5 @@ main_land
 mac
 win
 *.log
+.prettierrc
+Jenkinsfile_bitbucket.groovy

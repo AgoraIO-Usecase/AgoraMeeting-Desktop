@@ -123,6 +123,8 @@ export const en = {
     screen_share: 'Screen Share',
     whiteboard: 'WhiteBoard',
     record: 'Record',
+    am:"AM",
+    pm:"PM"
   },
   device: {
     camera: 'Camera',
@@ -349,7 +351,7 @@ export const en = {
       'Cloud recording has been completed. Please copy the link and save it for 14 days',
     tip:
       'Only the host can initiate recording. Please apply to be the host first',
-    is_not_host:
+    is_not_owner:
       'You are not the initiator of this recording and cannot operate this recording',
   },
   rating: {

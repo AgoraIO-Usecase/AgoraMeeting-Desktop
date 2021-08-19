@@ -13,8 +13,8 @@ import { copyText } from '@/ui-kit/utils';
 import { useUIStore } from '@/infra/hooks';
 
 // Change it your own
-const PUBLISH_URL =
-  'https://webdemo.agora.io/flexible-classroom/test/dev_apaas_meeting_1.0.0/20210712_1793/#/';
+const PUBLISH_URL = '<INPUT YOUR URL>';
+
 export interface SharePopoverProps extends BaseProps {}
 
 export const SharePopover: FC<SharePopoverProps> = observer(({ children }) => {

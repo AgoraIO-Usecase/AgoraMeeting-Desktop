@@ -12,7 +12,6 @@ import Notification from 'rc-notification';
 import 'rc-notification/assets/index.css';
 import './index.css';
 
-const DEFAULT_IN_OUT_NOTIFICATION_LIMIT_COUNT = 50;
 
 export const checkLaunchOption = (option: any) => {
   if (isEmpty(option)) {
@@ -57,7 +56,6 @@ export const MettingHome: FC<MettingHomeProps> = ({
   onChangeCamera = (_) => _,
   onChangeMic = (_) => _,
   join,
-  onChangeUserInOutNotificationLimitCount = (_) => _,
   defaultOpenMic = true,
   defaultOpenCamera = true,
   language,
@@ -69,8 +67,6 @@ export const MettingHome: FC<MettingHomeProps> = ({
   const [openMic, setOpenMic] = useState(defaultOpenMic);
   const [openCamera, setOpenCamera] = useState(defaultOpenCamera);
 
-  const ref = useRef(DEFAULT_IN_OUT_NOTIFICATION_LIMIT_COUNT);
-  const [inOut, setInOut] = useState(ref.current);
 
   const showErrToast = (err: any) => {
     Notification.newInstance({}, (notification) => {
@@ -174,13 +170,7 @@ export const MettingHome: FC<MettingHomeProps> = ({
         onVisibleChange={(val) => {
           setDialogVisible(val);
         }}
-        language={language}
-        setUserInOutNotificationLimitCount={(number) => {
-          ref.current = number;
-          setInOut(number);
-          onChangeUserInOutNotificationLimitCount(number);
-        }}
-        inOutNotificationLimitCount={inOut}></HomeSettingDialog>
+        language={language}></HomeSettingDialog>
       <div className="login">
         <section className="login__header">
           <div className="header__right">

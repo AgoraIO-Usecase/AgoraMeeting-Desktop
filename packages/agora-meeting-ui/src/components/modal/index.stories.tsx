@@ -62,7 +62,7 @@ export const Docs = ({ title }: DocsProps) => (
                     ]
                 }
             >
-                <Icon type="red-caution" color="#F04C36" size={50} />
+                <Icon type="redcaution" color="#F04C36" size={50} />
                 <p>
                     课件未能加载成功，您可以点击重新加载重试，或者从云盘中播放课件
                 </p>
@@ -83,7 +83,7 @@ export const Docs = ({ title }: DocsProps) => (
                     onCancel: () => { console.log('cancel') },
                     children: (
                         <>
-                            <Icon type="red-caution" color="#F04C36" size={50} />
+                            <Icon type="redcaution" color="#F04C36" size={50} />
                             <p>
                                 课件未能加载成功，您可以点击重新加载重试，或者从云盘中播放课件
                             </p>

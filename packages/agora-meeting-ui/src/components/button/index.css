@@ -10,7 +10,7 @@
 }
 
 .btn-danger {
-  @apply text-danger bg-white border-danger border;
+  @apply text-danger bg-white border-danger border; 
 }
 
 .btn-danger:hover {

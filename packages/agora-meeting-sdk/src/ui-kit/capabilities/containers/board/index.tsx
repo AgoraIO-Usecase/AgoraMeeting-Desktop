@@ -67,14 +67,6 @@ export const allTools: ToolItem[] = [
   },
 ];
 
-// export type WhiteBoardState = {
-//   zoomValue: number;
-//   currentPage: number;
-//   totalPage: number;
-//   items: ToolItem[];
-//   handleToolBarChange: (evt: any) => Promise<any> | any;
-//   handleZoomControllerChange: (e: any) => Promise<any> | any;
-// };
 
 export const WhiteboardContainer = observer(() => {
   const { fullScreen, setFullScreen } = useUIStore();

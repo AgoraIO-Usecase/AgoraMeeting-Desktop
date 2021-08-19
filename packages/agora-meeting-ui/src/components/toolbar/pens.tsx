@@ -1,4 +1,3 @@
-import { useMounted } from '@/ui-kit/hooks';
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { Icon } from '~components/icon';
 import { Popover } from '~components/popover';

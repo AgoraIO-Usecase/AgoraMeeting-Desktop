@@ -23,27 +23,23 @@ export const ChatMessageItem: FC<ChatMessageItemProps> = observer(
     sendState,
     messageId,
   }) => {
-    const [hour, setHour] = useState('00');
-    const [minute, setMinute] = useState('00');
+    const [finalTime, setinalTime] = useState('00:00');
     const { resendChatMessage } = useMessagesContext();
 
     useEffect(() => {
       if (showTime) {
         const time = dayjs(timestamp);
-        const curHour = time.get('hour');
-        const curMinute = time.get('minute');
-        setHour(curHour > 9 ? curHour + '' : `0${curHour}`);
-        setMinute(curMinute > 9 ? curMinute + '' : `0${curMinute}`);
+        let curHour = time.get('hour');
+        let curMinute = time.get('minute');
+        let finHour = curHour > 9 ? curHour + '' : `0${curHour}`;
+        let finMinute = curMinute > 9 ? curMinute + '' : `0${curMinute}`;
+        setinalTime(`${finHour}:${finMinute}`);
       }
     }, [timestamp, showTime]);
 
     return (
       <div className="chat-message">
-        {showTime ? (
-          <div className="chat-time">
-            {hour}:{minute}
-          </div>
-        ) : null}
+        {showTime ? <div className="chat-time">{finalTime}</div> : null}
         <div className={`chat-message-${isFromMyself ? 'right' : 'left'}`}>
           <div className="chat-message-username">{fromUser.userName}</div>
           <div className="chat-message-item">

@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { AgoraMediaDeviceEnum } from '@/infra/types';
+// import { AgoraMediaDeviceEnum } from '@/infra/types';
 import { isEmpty } from 'lodash';
 import { useEffect } from 'react';
 import { ApplianceNames } from 'agora-meeting-core';
@@ -20,6 +20,10 @@ export class MemoryStorage {
 
   removeItem(name: string) {
     this._storage.delete(name);
+  }
+
+  clear() {
+    this._storage.clear();
   }
 }
 
@@ -45,48 +49,8 @@ export class CustomStorage {
     this.storage.setItem(key, JSON.stringify(val));
   }
 
-  clear(key: string) {
-    this.storage.removeItem(key);
-  }
-
-  setLanguage(lang: string) {
-    this.save(this.languageKey, lang);
-  }
-
-  getLanguage() {
-    const language = this.read(this.languageKey)
-      ? this.read(this.languageKey)
-      : navigator.language;
-    return language;
-  }
-
-  getRtmMessage(): { count: any; messages: any[] } {
-    const channelMessages = GlobalStorage.read('channelMessages');
-    if (isEmpty(channelMessages))
-      return {
-        count: 0,
-        messages: [],
-      };
-    const messages = channelMessages.filter(
-      (it: any) => it.message_type === 'group_message',
-    );
-    const chatMessages = messages.reduce((collect: any[], value: any) => {
-      const payload = value.payload;
-      const json = JSON.parse(payload);
-      if (json.content) {
-        return collect.concat({
-          account: json.account,
-          content: json.content,
-          ms: value.ms,
-          src: value.src,
-        });
-      }
-      return collect;
-    }, []);
-    return {
-      messages: chatMessages,
-      count: chatMessages.length,
-    };
+  clear() {
+    this.storage.clear();
   }
 }
 
@@ -117,7 +81,8 @@ export class PersistLocalStorage {
 }
 
 export const GlobalStorage = new CustomStorage();
-export const storage = new PersistLocalStorage();
+
+// export const storage = new PersistLocalStorage();
 
 export const debounce = function (foo: any, t: number) {
   let timer: any;
@@ -137,13 +102,12 @@ export const getDeviceLabelFromStorage = (type: string) => {
   const mediaDeviceStorage = GlobalStorage.read('mediaDevice') || {};
 
   if (!['cameraLabel', 'microphoneLabel'].includes(type)) {
-    return AgoraMediaDeviceEnum.Default;
+    return '';
   }
   return mediaDeviceStorage[type];
 };
 
 export type BytesType = number | string;
-
 
 export const isElectron =
   window.isElectron || window.agoraBridge ? true : false;

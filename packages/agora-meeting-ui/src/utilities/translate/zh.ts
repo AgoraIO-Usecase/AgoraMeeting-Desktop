@@ -137,6 +137,8 @@ export const zh = {
     screen_share: '屏幕共享',
     whiteboard: '白板',
     record: '录制',
+    am:"上午",
+    pm:"下午"
   },
   device: {
     camera: '摄像头',
@@ -329,7 +331,7 @@ export const zh = {
     copy_address: '复制地址',
     record_success: '云录制已完成请复制链接保存，录制保存14天',
     tip: '只有主持人可以发起录制，请先申请成为主持人',
-    is_not_host: '您不是本次录制发起者，无法操作本次录制',
+    is_not_owner: '您不是本次录制发起者，无法操作本次录制',
   },
   rating: {
     title: '评分',

@@ -54,8 +54,8 @@ export const ToastContainer = observer(() => {
     'invite.meeting_info_copy_success': (props: any) =>
       toast('invite.meeting_info_copy_success', props),
     'record.tip': (props: any) => toast('record.tip', props, 'error'),
-    'record.is_not_host': (props: any) =>
-      toast('record.is_not_host', props, 'error'),
+    'record.is_not_owner': (props: any) =>
+      toast('record.is_not_owner', props, 'error'),
     'toast.copy_success': (props: any) => toast('toast.copy_success', props),
   };
 

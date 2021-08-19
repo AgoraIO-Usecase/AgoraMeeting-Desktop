@@ -63,8 +63,8 @@ const addStyleLoader = () => (config) => {
     include: [
       path.resolve(__dirname, 'src'),
       path.resolve(__dirname, '../agora-meeting-ui/src'),
-      path.resolve(__dirname, '../../node_modules/rc-slider'),
       path.resolve(__dirname, '../../node_modules/rc-notification'),
+      path.resolve(__dirname, '../../node_modules/rc-slider'),
     ],
     use: [
       // No need for "css-loader" nor "style-loader"
@@ -231,8 +231,7 @@ const webpackConfig = override(
       __dirname,
       '../agora-meeting-ui/src/components',
     ),
-    '~utilities': path.resolve(__dirname, '../agora-meeting-ui/src/utilities'),
-  }),
+    '~utilities': path.resolve(__dirname, '../agora-meeting-ui/src/utilities'),  }),
   removeModuleScopePlugin(),
 );
 

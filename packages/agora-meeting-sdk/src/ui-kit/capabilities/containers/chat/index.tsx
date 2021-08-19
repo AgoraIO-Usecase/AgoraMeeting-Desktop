@@ -13,10 +13,9 @@ import { toJS } from 'mobx';
 import { useUIStore } from '@/infra/hooks';
 import './index.css';
 import dayjs from 'dayjs';
+import { transI18n } from '~ui-kit';
 
 const SECONDS_GAP = 60 * 2;
-
-import { transI18n } from '~ui-kit';
 
 export interface ChatProps extends BaseProps {}
 
@@ -36,7 +35,7 @@ export const MettingChat: FC<ChatProps> = observer(() => {
   const scrollDirection = useRef<string>('bottom');
 
   const { chatMessageList, sendChatMessage } = useMessagesContext();
-  const { toggleChatVisible } = useMessagesContext();
+  const { setChatVisible } = useMessagesContext();
 
   const handleScrollDown = (current: HTMLDivElement) => {
     current.scrollTop = current.scrollHeight;
@@ -74,7 +73,7 @@ export const MettingChat: FC<ChatProps> = observer(() => {
   };
 
   const onClose = () => {
-    toggleChatVisible(false);
+    setChatVisible(false);
   };
 
   const calcShowTime = (cur: ChatMessage, pre: ChatMessage) => {

@@ -6,6 +6,7 @@ import {
   useMessagesContext,
   NotifyMessage,
   NotifyMessageType,
+  useUsersContext,
 } from 'agora-meeting-core';
 import { BaseProps } from '~components/interface/base-props';
 import classnames from 'classnames';
@@ -30,6 +31,7 @@ export const NotifyItem: FC<NotifyItemProps> = observer(
     timestamp,
     showTime = false,
   }) => {
+    const { localUserInfo } = useUsersContext();
     const { dealNotifyMessageEvent } = useMessagesContext();
     const { addToast } = useUIStore();
     const content = transformNotifyMessageContent(type, sender, payload);
@@ -82,7 +84,11 @@ export const NotifyItem: FC<NotifyItemProps> = observer(
 
     const handleClick = async () => {
       if (!disable) {
-        if (type !== NotifyMessageType.RECORD_CLOSED) {
+        if (
+          type !== NotifyMessageType.RECORD_CLOSED &&
+          type !== NotifyMessageType.NOTIFY_IN_OUT_OVER_MAX_LIMIT &&
+          type !== NotifyMessageType.NOTIFY_IN_OUT_CLOSED
+        ) {
           setDisable(true);
         }
         try {
@@ -106,13 +112,21 @@ export const NotifyItem: FC<NotifyItemProps> = observer(
         case NotifyMessageType.USER_APPROVE_APPLY_MIC:
           return transI18n('allow');
         case NotifyMessageType.RECORD_CLOSED:
-          return transI18n('record.copy_address');
+          if (localUserInfo.userId === payload?.ownerInfo?.userId) {
+            // 录制发起者才能复制链接
+            return transI18n('record.copy_address');
+          }
+          return '';
         case NotifyMessageType.ADMIN_CHANGE_NO_HOST:
           return transI18n('main.become_host');
+        case NotifyMessageType.NOTIFY_IN_OUT_OVER_MAX_LIMIT:
+          return transI18n('edit');
+        case NotifyMessageType.NOTIFY_IN_OUT_CLOSED:
+          return transI18n('edit');
         default:
           return null;
       }
-    }, [type]);
+    }, [type, localUserInfo, payload]);
 
     return (
       <div className="item-wrapper">

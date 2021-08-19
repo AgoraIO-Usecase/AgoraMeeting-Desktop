@@ -65,7 +65,8 @@
 }
 
 .member-item .item__right .icon-screen-share {
-  margin-right: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
   width: 16px;
   height: 16px;
   background: url('../../../../assets/icon_screenShareBlue@2x.png');

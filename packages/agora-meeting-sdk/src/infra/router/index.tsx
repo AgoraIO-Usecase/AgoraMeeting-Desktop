@@ -1,4 +1,4 @@
-import { BizPagePath, BizPageRouter } from '@/infra/types';
+import {  BizPageRouter } from '@/infra/types';
 import { HomePage } from '@/infra/debug-page/home';
 import { LaunchPage } from '@/infra/debug-page/launch';
 import { PretestScenarioPage } from '@/ui-kit/capabilities/scenarios/pretest';

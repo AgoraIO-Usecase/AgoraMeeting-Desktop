@@ -95,12 +95,10 @@ export default class AgoraMeetingSDK {
           openMic: option.openMic,
           openCamera: option.openCamera,
           duration: option.duration,
-          startTime: option.startTime,
           totalPeople: option.totalPeople,
           userInOutNotificationLimitCount:
             option.userInOutNotificationLimitCount,
         },
-        language: option.language,
         resetRoomInfo: false,
         mainPath: mainPath,
         roomPath: roomPath,

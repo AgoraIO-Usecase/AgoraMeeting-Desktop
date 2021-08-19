@@ -55,6 +55,7 @@ export const formatFileSize = (fileByteSize: number, decimalPoint?: number) => {
 };
 
 export type I18nLanguage = 'zh' | 'en';
+
 export const translate = (lang: I18nLanguage, str: string, options?: any) => {
   const textMap: Record<I18nLanguage, any> = config;
   let result = get(textMap[lang], str, null);

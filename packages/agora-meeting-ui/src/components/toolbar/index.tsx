@@ -7,7 +7,7 @@ import foldAbsent from './assets/icon-open.svg';
 import unfoldHover from './assets/icon-close-hover.svg';
 import foldHover from './assets/icon-open-hover.svg';
 import './index.css';
-import { useMounted } from '@/ui-kit/hooks';
+import { useMounted } from '../../utilities/hooks';
 import { debounce } from 'lodash';
 
 export { Colors } from './colors';

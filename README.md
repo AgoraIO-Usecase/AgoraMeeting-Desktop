@@ -1,13 +1,12 @@
 # Agora Meeting
 
+> require node >= 12.0.0
+
 
 
 ## Recommend
 
-Recommend using yarn instead of npm
-[https://yarn.bootcss.com/](https://yarn.bootcss.com/)
-
-
+Recommend using yarn instead of npm [https://yarn.bootcss.com/](https://yarn.bootcss.com/)
 
 ## Installation
 
@@ -16,10 +15,6 @@ Install deps from project root
 ```bash
 yarn install
 ```
-
-
-
-
 
 ## Run Apaas
 
@@ -57,7 +52,17 @@ REACT_APP_AGORA_APP_RECORD_URL=<YOUR RECORD_URL>
 
 from project root
 
-```
+```bash
 yarn run run:demo
+```
+
+
+
+## Run Meeting-ui
+
+from project root
+
+```bash
+yarn run run:ui-kit
 ```
 

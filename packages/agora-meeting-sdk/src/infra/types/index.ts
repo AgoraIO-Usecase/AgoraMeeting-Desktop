@@ -22,22 +22,9 @@ export enum BizPagePath {
   PretestPagePath = '/pretest',
 }
 
-export type NetlessTaskProgress = {
-  totalPageSize: number;
-  convertedPageSize: number;
-  convertedPercentage: number;
-  convertedFileList: readonly SceneDefinition[];
-};
-
-
-export enum QuickTypeEnum {
-  Kick = 'kick',
-  Kicked = 'kicked',
-  End = 'end',
-}
-
-export enum AgoraMediaDeviceEnum {
-  Default = '',
-  Unknown = 'unknown',
-}
-
+// export type NetlessTaskProgress = {
+//   totalPageSize: number;
+//   convertedPageSize: number;
+//   convertedPercentage: number;
+//   convertedFileList: readonly SceneDefinition[];
+// };

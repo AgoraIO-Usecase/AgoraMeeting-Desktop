@@ -4,11 +4,12 @@ import {
   ClassRoomAbstractStore,
   controller,
 } from '../../api/controller';
-import { useHomeStore, useUIStore } from '@/infra/hooks';
+import { useHomeStore } from '@/infra/hooks';
 import { isEmpty } from 'lodash';
 import { observer } from 'mobx-react';
 import { useCallback, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
+import { GlobalStorage } from '@/infra/utils';
 
 import { Rating } from './rating/index';
 import { Modal } from '~components/modal';
@@ -34,7 +35,7 @@ export const LaunchPage = observer(() => {
     }
   }, []);
 
-  const handleDestroyed = () => {
+  const showRatingDialog = () => {
     Modal.show({
       width: 420,
       title: transI18n('rating.title'),
@@ -91,7 +92,8 @@ export const LaunchPage = observer(() => {
             listener: (evt: AgoraEvent) => {
               console.log('launch#listener ', evt);
               if (evt === AgoraEvent.destroyed) {
-                handleDestroyed();
+                showRatingDialog();
+                GlobalStorage.clear();
               }
             },
           });

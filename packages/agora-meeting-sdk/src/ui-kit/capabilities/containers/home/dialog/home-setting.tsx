@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import classnames from 'classnames';
 import { FC, useEffect } from 'react';
 import { BaseProps } from '~components/interface/base-props';
-import { ISettingTab } from '../../setting/setting';
+import { ISettingTab } from '../../setting';
 import { transI18n } from '~ui-kit';
 import { Modal } from '~ui-kit';
 import { PersonSetting } from '@/ui-kit/capabilities/containers/setting/person-setting';
@@ -11,11 +11,12 @@ import { useState } from 'react';
 import AgoraMeetingSDK from '@/infra/api/index';
 import { useMemo } from 'react';
 import '@/ui-kit/capabilities/containers/setting/index.css';
+import { GlobalStorage } from '@/infra/utils';
+
+
 
 export interface HomeSettingDialogProps extends BaseProps {
   language?: string;
-  setUserInOutNotificationLimitCount: (num: number) => void;
-  inOutNotificationLimitCount: number;
   visible: boolean;
   onVisibleChange?: (val: boolean) => void;
 }
@@ -23,11 +24,11 @@ export interface HomeSettingDialogProps extends BaseProps {
 export const HomeSettingDialog: FC<HomeSettingDialogProps> = ({
   language = 'zh',
   className,
-  setUserInOutNotificationLimitCount,
-  inOutNotificationLimitCount,
   visible = false,
   onVisibleChange,
 }) => {
+
+
   const cls = classnames({
     [`setting`]: 1,
     [`${className}`]: !!className,
@@ -44,13 +45,7 @@ export const HomeSettingDialog: FC<HomeSettingDialogProps> = ({
       text: transI18n('setting.person'),
       value: 'personSetting',
       component: (
-        <PersonSetting
-          setUserInOutNotificationLimitCount={
-            setUserInOutNotificationLimitCount
-          }
-          inOutNotificationLimitCount={
-            inOutNotificationLimitCount
-          }></PersonSetting>
+        <PersonSetting></PersonSetting>
       ),
     },
     {

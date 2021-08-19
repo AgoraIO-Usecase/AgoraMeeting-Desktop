@@ -168,7 +168,7 @@ export const Chat: FC<ChatProps> = ({
         {!canChatting ? (
           <div className="chat-notice">
             <span>
-              <Icon type="red-caution" />
+              <Icon type="redcaution" />
               <span>{t('placeholder.enable_chat_muted')}</span>
             </span>
           </div>

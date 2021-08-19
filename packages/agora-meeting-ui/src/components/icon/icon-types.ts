@@ -62,9 +62,9 @@ export type IconTypes =
   | 'square'
   | 'circle'
   | 'close'
-  | 'checked'
+  | 'check'
   | 'register'
   | 'kick-out'
-  | 'red-caution'
+  | 'redcaution'
   | 'laser-pointer'
   | 'recording';

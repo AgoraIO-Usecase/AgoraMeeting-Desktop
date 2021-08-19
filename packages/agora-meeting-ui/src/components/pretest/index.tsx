@@ -7,7 +7,7 @@ import { Icon } from '~components/icon';
 import { BaseProps } from '~components/interface/base-props';
 import { Select } from '~components/select';
 import { Slider } from '~components/slider';
-import { CheckBox } from '~components/table';
+import { CheckBox } from '~components';
 import { Volume } from '~components/volume';
 import './index.css';
 

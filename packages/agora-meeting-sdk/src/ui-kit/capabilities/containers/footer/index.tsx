@@ -30,7 +30,7 @@ export interface FooterProps extends BaseProps {}
 export const MettingFooter: FC<FooterProps> = observer(({}) => {
   const { memberVisible, setMemberVisible } = useUIStore();
   const { fireDialog } = useGlobalContext();
-  const { chatVisible, toggleChatVisible } = useMessagesContext();
+  const { chatVisible, setChatVisible } = useMessagesContext();
   const {
     unreadChatMessageCount,
     setUnreadChatMessageCount,
@@ -104,16 +104,15 @@ export const MettingFooter: FC<FooterProps> = observer(({}) => {
       // 自己发起的录制只有自己结束
       if (isRecordingByMyself) {
         stopRecording();
-      } else if (isHost) {
-        // 其他主持人
-        fireToast('record.is_not_host');
+      } else {
+        fireToast('record.is_not_owner');
       }
     }
   };
 
   const handleChat = () => {
     const curVisible = !chatVisible;
-    toggleChatVisible(curVisible);
+    setChatVisible(curVisible);
     if (curVisible) {
       setUnreadChatMessageCount(0);
     }

@@ -365,15 +365,15 @@ export const Docs = () => (
     </div>
     <div className="p-4 w-40 text-center">
       <div>
-        <Icon type="checked" />
+        <Icon type="check" />
       </div>
-      <div>checked</div>
+      <div>check</div>
     </div>
     <div className="p-4 w-40 text-center">
       <div>
-        <Icon type="red-caution" />
+        <Icon type="redcaution" />
       </div>
-      <div>red-caution</div>
+      <div>redcaution</div>
     </div>
     <div className="p-4 w-40 text-center">
       <div>

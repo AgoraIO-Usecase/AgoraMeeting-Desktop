@@ -5,7 +5,7 @@ import { Select } from '~components/select';
 import { Slider } from '~components/slider';
 import './index.css';
 import { transI18n } from '~components/i18n';
-import { DeviceProps } from './interface';
+import { DeviceProps } from './declare';
 import { usePretestContext } from 'agora-meeting-core';
 import { observer } from 'mobx-react';
 

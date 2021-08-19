@@ -53,9 +53,9 @@ export type SDKConfig = {
 export type LanguageEnum = 'en' | 'zh';
 
 export type LaunchConfig = {
-  userId: string; // 用户uuid
+  userId: string; // 用户id
   userName: string; // 用户昵称
-  roomId: string; // 房间uuid
+  roomId: string; // 房间id
   roomName: string; // 房间名称
   roomPassword: string; // 密码
   openMic: boolean; // 是否打开麦克风
@@ -63,13 +63,14 @@ export type LaunchConfig = {
   listener: ListenerCallback; // launch状态
   pretest: boolean; // 开启设备检测
   token: string; // rtmToken
-  isRobot?: boolean; // 是否机器人
-  language: LanguageEnum; // 国际化
-  startTime: number; // 房间开始时间
   duration: number; // 课程时长
   totalPeople: number; // 最大人数
   userInOutNotificationLimitCount?: number; // 进出通知的限制人数
-  recordUrl?: string; // 回放页地址
+  recordUrl?: string; // 录制页地址
+  isRobot?: boolean; // 是否机器人
+  // TODO:qinzhen:other params
+  // language: LanguageEnum; // 国际化
+  // startTime: number; // 房间开始时间
 };
 
 // 视图展示模式

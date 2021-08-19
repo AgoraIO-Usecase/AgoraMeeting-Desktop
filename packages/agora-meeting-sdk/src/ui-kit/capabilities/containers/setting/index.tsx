@@ -1,33 +1,106 @@
-import { Button, Modal, transI18n } from '~ui-kit';
-import { Setting } from './setting';
-import { observer } from 'mobx-react';
-import { usePretestContext } from 'agora-meeting-core';
+import React, { FC, useState, ReactNode, useMemo } from 'react';
+import classnames from 'classnames';
+import { BaseProps } from '~components/interface/base-props';
 import './index.css';
-import { BaseDialogProps } from '../dialog';
-import { useUIStore } from '@/infra/hooks';
-import { ReactNode } from 'react';
-import { UpoladLogState } from '@/infra/api';
+import { transI18n } from '~components/i18n';
+import { MediaSetting } from './media-setting';
+import { RoomSetting } from './room-setting';
+import { PersonSetting } from './person-setting';
+import { observer } from 'mobx-react';
+import { useMessagesContext } from 'agora-meeting-core';
+import { LogSetting } from './log-setting';
+import { SettingValue } from './declare';
+import './index.css';
 
-export const SettingContainer: React.FC<BaseDialogProps> = observer(
-  ({ id }) => {
+export interface ISettingTab {
+  text: string;
+  value: SettingValue;
+  component: ReactNode;
+}
 
+export interface SettingProps extends BaseProps {
+  exclude?: SettingValue[];
+  defaultHighlight?: SettingValue;
+}
 
-    const { removeDialog, setUploadLogState, uploadLogState } = useUIStore();
+export const Setting: FC<SettingProps> = observer(
+  ({ className, exclude, defaultHighlight }) => {
+    const {
+      setUserInOutNotificationLimitCount,
+      inOutNotificationLimitCount,
+    } = useMessagesContext();
 
-    const onClose = () => {
-      removeDialog(id);
-      setUploadLogState(UpoladLogState.init);
+    const cls = classnames({
+      [`setting`]: 1,
+      [`${className}`]: !!className,
+    });
+
+    let tabs: ISettingTab[] = [
+      {
+        text: transI18n('setting.media'),
+        value: 'mediaSetting',
+        component: <MediaSetting></MediaSetting>,
+      },
+      {
+        text: transI18n('setting.person'),
+        value: 'personSetting',
+        component: (
+          <PersonSetting
+            setUserInOutNotificationLimitCount={
+              setUserInOutNotificationLimitCount
+            }
+            inOutNotificationLimitCount={
+              inOutNotificationLimitCount
+            }></PersonSetting>
+        ),
+      },
+      {
+        text: transI18n('setting.room'),
+        value: 'roomSetting',
+        component: <RoomSetting></RoomSetting>,
+      },
+      {
+        text: transI18n('log.title'),
+        value: 'logSetting',
+        component: <LogSetting></LogSetting>,
+      },
+    ];
+
+    if (exclude?.length) {
+      tabs = tabs.filter((item) => !(exclude.indexOf(item.value) > -1));
+    }
+
+    const [highlight, setHighlight] = useState<SettingValue>(
+      defaultHighlight || tabs[0].value,
+    );
+
+    const getItemCls = (value: string) => {
+      return classnames('tab-item', {
+        active: value === highlight,
+      });
     };
 
+    const highlightComponent = useMemo(() => {
+      const item = tabs.find((item) => item.value === highlight);
+      return item?.component;
+    }, [highlight]);
+
     return (
-      <Modal
-        contentClassName="setting-content"
-        title={transI18n('setting.setting')}
-        width={612}
-        onCancel={onClose}
-        onOk={onClose}>
-        <Setting />
-      </Modal>
+      <div className={cls}>
+        <div className="setting__left">
+          {tabs.map((item) => (
+            <div
+              key={item.value}
+              className={getItemCls(item.value)}
+              onClick={() => {
+                setHighlight(item.value);
+              }}>
+              {item.text}
+            </div>
+          ))}
+        </div>
+        <div className="setting__right">{highlightComponent}</div>
+      </div>
     );
   },
 );

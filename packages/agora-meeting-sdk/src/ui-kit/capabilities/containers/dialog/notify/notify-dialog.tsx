@@ -12,7 +12,7 @@ import { useUIStore } from '@/infra/hooks';
 import { useMemo } from 'react';
 import dayjs from 'dayjs';
 
-const SECONDS_GAP = 60 * 10;
+const SECONDS_GAP = 60 * 2;
 
 export const NotifyMessageDialog: React.FC<BaseDialogProps> = observer(
   ({ id }) => {

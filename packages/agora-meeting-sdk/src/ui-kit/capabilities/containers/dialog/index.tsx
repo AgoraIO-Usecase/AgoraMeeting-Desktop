@@ -158,14 +158,21 @@ export const DialogContainer: React.FC<any> = observer(() => {
     'close-room': () => addDialog(CloseRoomDialog),
     // 房间被关闭
     'room-end': () => addDialog(RoomEndDialog),
+    // 房间设置
     setting: (props: any) => addDialog(SettingDialog, { ...props }),
+    // 消息通知
     'notify-message': () => addDialog(NotifyMessageDialog),
+    // 关闭所有设备
     'close-all-device': (props: any) =>
       addDialog(CloseAllDeviceDialog, { ...props }),
+    // 免责声明
     disclaimer: (props: any) => addDialog(DisclaimerDialog, { ...props }),
+    // 白板关闭
     'board-close': (props: any) => addDialog(BoardCloseDialog, { ...props }),
+    // 屏幕共享关闭
     'screensharing-close': (props: any) =>
       addDialog(ScreensharingCloseDialog, { ...props }),
+    // 被踢出
     'be-kicked-out': (props: any) => addDialog(BeKickedOutDialog, { ...props }),
   };
 
