@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "resolutions": {
     "@babel/core": "7.13.15",
     "@babel/plugin-proposal-class-properties": "7.13.0",
@@ -30,6 +33,7 @@
   "description": "[English](README.zh.md)*",
   "version": "1.0.0",
   "scripts": {
+    "preinstall": "node ./scripts/checkYarn.js",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "release:apaas:sdk": "lerna exec --scope=agora-meeting-sdk npm run pack:npm",
     "release:classroom:sdk": "run-s release:apaas:sdk",

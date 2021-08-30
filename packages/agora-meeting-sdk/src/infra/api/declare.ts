@@ -1,7 +1,6 @@
 import { RenderInfo } from 'agora-meeting-core';
 
-
- export enum RoleTypeEnum {
+export enum RoleTypeEnum {
   none = -1,
   invisible = 0,
   teacher = 1,
@@ -9,14 +8,12 @@ import { RenderInfo } from 'agora-meeting-core';
   assistant = 3,
 }
 
-
 export const regionMap = {
   AP: 'sg',
   CN: 'cn-hz',
   EU: 'gb-lon',
   NS: 'us-sv',
 } as const;
-
 
 export type RoomConfigProps<T> = {
   store: T;
@@ -68,9 +65,9 @@ export type LaunchConfig = {
   userInOutNotificationLimitCount?: number; // 进出通知的限制人数
   recordUrl?: string; // 录制页地址
   isRobot?: boolean; // 是否机器人
+  userProperties?: Object;
   // TODO:qinzhen:other params
   // language: LanguageEnum; // 国际化
-  // startTime: number; // 房间开始时间
 };
 
 // 视图展示模式

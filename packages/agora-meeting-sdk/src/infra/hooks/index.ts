@@ -3,9 +3,6 @@ import { MobXProviderContext } from 'mobx-react';
 import { createContext, useContext, useEffect } from 'react';
 import { UIStore } from '@/infra/stores/app/ui';
 
-export const useEffectOnce = (effect: any) => {
-  useEffect(effect, []);
-};
 
 export const useHomeStore = (): HomeStore => {
   const context = useContext<HomeContext>(MobXProviderContext);

@@ -231,7 +231,8 @@ const webpackConfig = override(
       __dirname,
       '../agora-meeting-ui/src/components',
     ),
-    '~utilities': path.resolve(__dirname, '../agora-meeting-ui/src/utilities'),  }),
+    '~utilities': path.resolve(__dirname, '../agora-meeting-ui/src/utilities'),
+  }),
   removeModuleScopePlugin(),
 );
 

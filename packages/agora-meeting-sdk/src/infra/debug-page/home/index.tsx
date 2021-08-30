@@ -6,7 +6,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import MD5 from 'js-md5';
 import { useLayoutEffect } from 'react';
-import { GlobalStorage } from '../../utils';
+import { GlobalStorage } from '../../storage';
 
 const DEFAULT_IN_OUT_NOTIFICATION_LIMIT_COUNT = 50;
 
@@ -39,11 +39,6 @@ export const HomePage = observer(() => {
   };
 
   const history = useHistory();
-
-  // @ts-ignore
-  // const SDKVersion = window.isElectron
-  //   ? window.rtcEngine.getVersion().version
-  //   : AgoraRTC.VERSION;
 
   const onClickJoin = async () => {
     homeStore.setLaunchConfig({

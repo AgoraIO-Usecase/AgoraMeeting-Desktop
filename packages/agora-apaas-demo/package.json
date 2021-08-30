@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "agora-access-token": "2.0.4",
-    "agora-meeting-sdk": "1.1.0-rc.1"
+    "agora-meeting-sdk": "1.1.0-rc.2"
   },
   "devDependencies": {
     "@babel/preset-env": "7.12.11",

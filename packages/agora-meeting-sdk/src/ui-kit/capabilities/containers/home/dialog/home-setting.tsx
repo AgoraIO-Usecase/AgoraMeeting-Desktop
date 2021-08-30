@@ -11,7 +11,7 @@ import { useState } from 'react';
 import AgoraMeetingSDK from '@/infra/api/index';
 import { useMemo } from 'react';
 import '@/ui-kit/capabilities/containers/setting/index.css';
-import { GlobalStorage } from '@/infra/utils';
+import { GlobalStorage } from '@/infra/storage';
 
 
 

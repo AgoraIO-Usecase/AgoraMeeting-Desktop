@@ -2,7 +2,7 @@ import 'promise-polyfill/src/polyfill';
 import ReactDOM from 'react-dom';
 import { App } from '@/infra/monolithic/app';
 import AgoraMeetingSDK from './infra/api';
-import { GlobalStorage } from '@/infra/utils';
+import { GlobalStorage } from '@/infra/storage';
 
 //@ts-ignore
 import { stopReportingRuntimeErrors } from 'react-error-overlay';

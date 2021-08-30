@@ -1,4 +1,4 @@
-import { GlobalStorage } from '../../utils';
+import { GlobalStorage } from '../../storage';
 import { LaunchConfig } from "@/infra/api";
 
 export class HomeStore {

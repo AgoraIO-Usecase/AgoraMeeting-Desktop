@@ -4,7 +4,7 @@ import { BaseProps } from '~components/interface/base-props';
 import { Select } from '~components/select';
 import './index.css';
 import { transI18n } from '~components/i18n';
-import { GlobalStorage } from '@/infra/utils';
+import { GlobalStorage } from '@/infra/storage';
 
 const DEFAULT_IN_OUT_NOTIFICATION_LIMIT_COUNT = 50;
 

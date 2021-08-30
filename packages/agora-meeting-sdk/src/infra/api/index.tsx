@@ -84,6 +84,7 @@ export default class AgoraMeetingSDK {
           token: option.token,
           recordUrl: option.recordUrl!,
           isRobot: !!option?.isRobot,
+          userProperties: option?.userProperties,
         },
         // 初始化的房间信息
         roomInfoParams: {
@@ -123,7 +124,7 @@ export default class AgoraMeetingSDK {
       throw GenericErrorWrapper(err);
     }
 
-    return controller.appController.getClassRoom();
+    return controller.appController.getRoom();
   }
 }
 

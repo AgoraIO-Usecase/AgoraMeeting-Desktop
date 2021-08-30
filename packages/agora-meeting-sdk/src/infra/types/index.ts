@@ -1,5 +1,3 @@
-import { SceneDefinition } from 'agora-meeting-core';
-
 export declare type ListenerCallbackType<T> = [T] extends [
   (...args: infer U) => any,
 ]
@@ -22,9 +20,3 @@ export enum BizPagePath {
   PretestPagePath = '/pretest',
 }
 
-// export type NetlessTaskProgress = {
-//   totalPageSize: number;
-//   convertedPageSize: number;
-//   convertedPercentage: number;
-//   convertedFileList: readonly SceneDefinition[];
-// };

@@ -6,6 +6,10 @@ type UseWatchConfig = {
   immediate: boolean;
 };
 
+export const useEffectOnce = (effect: any) => {
+  useEffect(effect, []);
+};
+
 export const useWatch = <T>(
   dep: T,
   callback: UseWatchCallback<T>,
@@ -118,9 +122,7 @@ export const useRendererPlayer = <T extends HTMLElement>(
       player.track.play && player.track.play(dom, player?.videoPlayerConfig);
     }
     return () => {
-      player.track &&
-        player.track.stop &&
-        player.track.stop(props.preview);
+      player.track && player.track.stop && player.track.stop(props.preview);
     };
   };
 

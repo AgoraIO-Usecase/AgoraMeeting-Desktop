@@ -1,24 +1,19 @@
 import AgoraMeetingSDK, { AgoraEvent } from '../../api';
-import {
-  ClassRoom,
-  ClassRoomAbstractStore,
-  controller,
-} from '../../api/controller';
+import { Room, RoomAbstractStore, controller } from '../../api/controller';
 import { useHomeStore } from '@/infra/hooks';
 import { isEmpty } from 'lodash';
 import { observer } from 'mobx-react';
 import { useCallback, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { GlobalStorage } from '@/infra/utils';
-
+import { GlobalStorage } from '@/infra/storage';
+import { RoomCache } from 'agora-meeting-core';
 import { Rating } from './rating/index';
 import { Modal } from '~components/modal';
 import Notification from 'rc-notification';
-import 'rc-notification/assets/index.css';
-
 import { RtmTokenBuilder, RtmRole } from 'agora-access-token';
 import { transI18n } from '~ui-kit';
 
+import 'rc-notification/assets/index.css';
 //@ts-ignore
 window.controller = controller;
 
@@ -26,7 +21,7 @@ export const LaunchPage = observer(() => {
   const homeStore = useHomeStore();
   const history = useHistory();
   const launchOption = homeStore.launchOption;
-  const roomRef = useRef<ClassRoom<ClassRoomAbstractStore> | null>(null);
+  const roomRef = useRef<Room<RoomAbstractStore> | null>(null);
 
   useEffect(() => {
     if (!launchOption || isEmpty(launchOption)) {
@@ -84,13 +79,16 @@ export const LaunchPage = observer(() => {
           }
           roomRef.current = await AgoraMeetingSDK.launch(dom, {
             ...launchOption,
+            userProperties: {
+              'my-properties': 'bb',
+            },
             // TODO:  这里需要传递开发者自己发布的录制页面地址
             recordUrl: REACT_APP_AGORA_APP_RECORD_URL
               ? `${REACT_APP_AGORA_APP_RECORD_URL}`
               : `https://webdemo.agora.io/agorameeting/test/dev_apaas_meeting_1.0.1/record_page`,
 
-            listener: (evt: AgoraEvent) => {
-              console.log('launch#listener ', evt);
+            listener: (evt: AgoraEvent, cache?: RoomCache) => {
+              console.log('meeting sdk #listener ', evt, cache);
               if (evt === AgoraEvent.destroyed) {
                 showRatingDialog();
                 GlobalStorage.clear();

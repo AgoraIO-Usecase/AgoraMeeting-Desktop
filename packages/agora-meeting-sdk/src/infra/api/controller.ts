@@ -2,26 +2,29 @@ import { unmountComponentAtNode } from 'react-dom';
 import { AgoraEvent } from './declare';
 import { render } from 'react-dom';
 import { ReactElement } from 'react';
+import { RoomCache } from 'agora-meeting-core';
+import { cloneDeep } from 'lodash';
+import { GlobalStorage } from '../storage';
 
-export enum EduSDKInternalStateEnum {
+export enum SDKInternalStateEnum {
   Created = 'created',
   Initialized = 'initialized',
   Destroyed = 'destroyed',
 }
 
-export type EventCallableFunction = (evt: AgoraEvent) => any;
+export type EventCallableFunction = (evt: AgoraEvent, cache?: RoomCache) => any;
 
-export abstract class ClassRoomAbstractStore {
+export abstract class RoomAbstractStore {
   constructor() {}
   destroy!: () => Promise<any>;
 }
 
-export class ClassRoom<T extends ClassRoomAbstractStore> {
+export class Room<T extends RoomAbstractStore> {
   private readonly store!: T;
   private dom!: HTMLElement;
-  private readonly controller: EduSDKController<T>;
+  private readonly controller: SDKController<T>;
 
-  constructor(context: EduSDKController<T>) {
+  constructor(context: SDKController<T>) {
     this.controller = context;
   }
 
@@ -30,17 +33,17 @@ export class ClassRoom<T extends ClassRoomAbstractStore> {
   }
 }
 
-export class EduSDKController<T extends ClassRoomAbstractStore> {
-  private room!: ClassRoom<T>;
+export class SDKController<T extends RoomAbstractStore> {
+  private room!: Room<T>;
   private dom!: HTMLElement;
   public callback!: EventCallableFunction;
   public _storeDestroy!: CallableFunction;
-  private _state: EduSDKInternalStateEnum = EduSDKInternalStateEnum.Created;
+  private _state: SDKInternalStateEnum = SDKInternalStateEnum.Created;
 
   private _lock: boolean = false;
 
   constructor() {
-    this.room = new ClassRoom(this);
+    this.room = new Room(this);
   }
 
   get hasCalled() {
@@ -62,10 +65,11 @@ export class EduSDKController<T extends ClassRoomAbstractStore> {
   }
 
   get isInitialized(): boolean {
-    return this.state === EduSDKInternalStateEnum.Initialized;
+    return this.state === SDKInternalStateEnum.Initialized;
   }
 
-  getClassRoom() {
+  // 对外
+  getRoom() {
     return this.room;
   }
 
@@ -81,7 +85,7 @@ export class EduSDKController<T extends ClassRoomAbstractStore> {
     this.dom = dom;
     this.callback = callback;
     render(component, this.dom);
-    this._state = EduSDKInternalStateEnum.Initialized;
+    this._state = SDKInternalStateEnum.Initialized;
     this.callback(AgoraEvent.ready);
   }
 
@@ -94,20 +98,21 @@ export class EduSDKController<T extends ClassRoomAbstractStore> {
       await this._storeDestroy();
     }
     unmountComponentAtNode(this.dom);
-    this._state = EduSDKInternalStateEnum.Destroyed;
-    this.callback(AgoraEvent.destroyed);
+    this._state = SDKInternalStateEnum.Destroyed;
+    const roomCache = GlobalStorage.read('agora_meeting_room_cache') || {};
+    this.callback(AgoraEvent.destroyed, roomCache);
   }
 }
 
 export class MainController {
   constructor(
-    public readonly appController = new EduSDKController(),
-    public readonly replayController = new EduSDKController(),
-    public readonly storageController = new EduSDKController(),
+    public readonly appController = new SDKController(),
+    public readonly replayController = new SDKController(),
+    public readonly storageController = new SDKController(),
   ) {}
 
-  getAppClassRoom() {
-    return this.appController.getClassRoom();
+  getRoom() {
+    return this.appController.getRoom();
   }
 }
 
