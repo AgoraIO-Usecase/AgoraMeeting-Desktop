@@ -59,6 +59,7 @@ export const HomePage = observer(() => {
       userInOutNotificationLimitCount:
         GlobalStorage.read('inOutLimitCount') ||
         text.userInOutNotificationLimitCount,
+      sdkDomain: `${REACT_APP_AGORA_APP_SDK_DOMAIN}`,
     });
     history.push('/launch');
   };

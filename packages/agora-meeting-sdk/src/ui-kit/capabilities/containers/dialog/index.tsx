@@ -4,6 +4,7 @@ import {
   useGlobalContext,
   useBoardContext,
   useScreenContext,
+  useMessagesContext,
 } from 'agora-meeting-core';
 import classnames from 'classnames';
 import { observer } from 'mobx-react';
@@ -150,6 +151,7 @@ export type DialogName =
 export const DialogContainer: React.FC<any> = observer(() => {
   const { dialogQueue, addDialog } = useUIStore();
   const { dialogEventObserver } = useGlobalContext();
+  const { toggleNotifyMessageDialog } = useMessagesContext();
 
   const dialogMap = {
     'apply-turn-on-device': (props: any) =>
@@ -161,7 +163,10 @@ export const DialogContainer: React.FC<any> = observer(() => {
     // 房间设置
     setting: (props: any) => addDialog(SettingDialog, { ...props }),
     // 消息通知
-    'notify-message': () => addDialog(NotifyMessageDialog),
+    'notify-message': () => {
+      toggleNotifyMessageDialog(true);
+      addDialog(NotifyMessageDialog);
+    },
     // 关闭所有设备
     'close-all-device': (props: any) =>
       addDialog(CloseAllDeviceDialog, { ...props }),

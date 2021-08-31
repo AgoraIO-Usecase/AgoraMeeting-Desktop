@@ -66,6 +66,7 @@ export type LaunchConfig = {
   recordUrl?: string; // 录制页地址
   isRobot?: boolean; // 是否机器人
   userProperties?: Object;
+  sdkDomain?: string;
   // TODO:qinzhen:other params
   // language: LanguageEnum; // 国际化
 };

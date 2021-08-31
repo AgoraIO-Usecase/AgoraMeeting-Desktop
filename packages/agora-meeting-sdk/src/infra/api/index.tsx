@@ -70,8 +70,8 @@ export default class AgoraMeetingSDK {
       if (option.pretest) {
         mainPath = BizPagePath.PretestPagePath;
       }
-      const sdkDomain = REACT_APP_AGORA_APP_SDK_DOMAIN
-        ? `${REACT_APP_AGORA_APP_SDK_DOMAIN}`
+      const sdkDomain = option.sdkDomain
+        ? option.sdkDomain
         : 'https://api.agora.io';
 
       const params = {

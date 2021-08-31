@@ -23,6 +23,5 @@ export const App = (props: AppType) => {
     basename: props.basename,
     resetRoomInfo: true,
   });
-
   return <AppContainer routes={routes} />;
 };

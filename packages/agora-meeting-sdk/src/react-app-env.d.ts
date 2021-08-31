@@ -123,9 +123,7 @@ declare module 'worker-loader!*' {
   export default WebpackWorker;
 }
 
-// declare global {
-//   export const REACT_APP_AGORA_APP_SDK_DOMAIN: string;
-// }
+
 
 declare module '*.scss';
 

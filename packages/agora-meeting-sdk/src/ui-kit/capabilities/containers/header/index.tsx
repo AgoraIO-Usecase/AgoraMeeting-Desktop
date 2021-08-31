@@ -108,7 +108,6 @@ export const MettingHeader: FC<HeaderProps> = observer(({}) => {
   };
 
   const onNoticeClick = () => {
-    toggleNotifyMessageDialog(true);
     fireDialog('notify-message');
   };
 
