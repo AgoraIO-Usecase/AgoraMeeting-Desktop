@@ -5233,10 +5233,10 @@ agora-access-token@2.0.4:
     crc-32 "1.2.0"
     cuint "0.2.2"
 
-agora-meeting-core@1.1.0-rc.2:
-  version "1.1.0-rc.2"
-  resolved "https://registry.npmjs.org/agora-meeting-core/-/agora-meeting-core-1.1.0-rc.2.tgz#296d42bb74046bdbed5bc951f8cd32fa306ebbd2"
-  integrity sha512-iuZdS2Br0ucRRuuAXnvKAaHd0vSEyu218MvsjUdZzUrRSAQznQ767vy8UBZ0BJPcFSU3R2fa4fOfcL7iANX60w==
+agora-meeting-core@1.1.0-rc.3:
+  version "1.1.0-rc.3"
+  resolved "https://registry.npmjs.org/agora-meeting-core/-/agora-meeting-core-1.1.0-rc.3.tgz#854e271fae9e6b52748f49bd096e8b7538e51bdf"
+  integrity sha512-lDm1yIgyCPJsoo+B69jkXTwLgwJwtx2NVhzfAuKRwdkZilJA90GapJIPN4CvNCUDptDN5tYKawy9pkrSEMaHJw==
   dependencies:
     "@netless/combine-player" "1.1.4"
     "@netless/cursor-tool" "0.0.7"
