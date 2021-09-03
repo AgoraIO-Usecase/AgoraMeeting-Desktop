@@ -19,7 +19,7 @@ export const zh = {
   admin: '主持人',
   member: '成员',
   member_list: '与会者列表',
-  search_member :'搜索与会者',
+  search_member: '搜索与会者',
   suspend: '暂停',
   me: '我',
   host: '主持人',
@@ -137,8 +137,8 @@ export const zh = {
     screen_share: '屏幕共享',
     whiteboard: '白板',
     record: '录制',
-    am:"上午",
-    pm:"下午"
+    am: '上午',
+    pm: '下午',
   },
   device: {
     camera: '摄像头',
@@ -197,6 +197,7 @@ export const zh = {
     room_max_member: '房间内人数已达上限',
     room_max_broadcaster: '房间内已达到主播数上限',
     copy_success: '复制成功',
+    err_oss_host: '无法获取到此AppID下面的OSS host',
   },
   scaffold: {
     search: '搜索',

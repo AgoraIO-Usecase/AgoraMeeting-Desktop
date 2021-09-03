@@ -47,7 +47,7 @@ export const Slider: FC<SliderProps> = ({
         );
     };
     const cls = classnames({
-        [`slider`]: 1,
+        [`meeting-slider`]: 1,
         [`${className}`]: !!className,
     });
     return (

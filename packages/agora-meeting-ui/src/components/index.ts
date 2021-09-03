@@ -13,7 +13,6 @@ export * from './toolbar';
 export * from './zoom-controller';
 export * from './loading';
 export * from './card';
-export * from './screen-share';
 export * from './button/icon-btn';
 export * from './progress';
 export * from './placeholder';

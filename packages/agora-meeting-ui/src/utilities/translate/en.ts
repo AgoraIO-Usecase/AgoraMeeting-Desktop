@@ -176,6 +176,7 @@ export const en = {
     board_ongoing: 'Whiteboard is ongoing',
     screen_ongoing: 'Screen share is ongoing',
     copy_success: 'Copy success',
+    err_oss_host:"Cannot acquire oss host",
   },
   scaffold: {
     search: 'Search',

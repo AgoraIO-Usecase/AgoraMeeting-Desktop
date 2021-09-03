@@ -7,19 +7,6 @@
   @apply font-scenario;
 }
 
-.page-loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  height: 100%;
-  position: fixed;
-  width: 100%;
-  z-index: 999999;
-}
-.page-loading.ppd-loading {
-  z-index: 11;
-}
 
 .fixed-container {
   display: flex;

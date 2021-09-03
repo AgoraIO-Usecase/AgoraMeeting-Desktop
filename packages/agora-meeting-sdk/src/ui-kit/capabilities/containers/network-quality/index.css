@@ -31,6 +31,6 @@
   background: url('../../../assets/signal_unknown@2x.png');
 }
 
-.network-popover > .popover-content > .popover-inner > .popover-inner-content {
+.network-quality .network-popover > .popover-content > .popover-inner > .popover-inner-content {
   padding: 10px 20px;
 }

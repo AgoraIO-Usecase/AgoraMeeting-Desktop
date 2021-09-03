@@ -50,7 +50,7 @@ export const Toolbar: FC<ToolbarProps> = ({
   const animContainer = useRef<HTMLDivElement | null>(null);
   const [reachEnd, setReachEnd] = useState<boolean>(false);
   const cls = classnames({
-    [`toolbar`]: 1,
+    [`meeting-toolbar`]: 1,
     [`opened`]: opened,
     [`${className}`]: !!className,
   });

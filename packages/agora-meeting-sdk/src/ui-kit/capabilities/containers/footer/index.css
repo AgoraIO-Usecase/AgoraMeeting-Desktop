@@ -8,11 +8,11 @@
   background: #313131;
 }
 
-.footer__center {
+.metting-footer .footer__center {
   display: flex;
 }
 
-.footer__right {
+.metting-footer .footer__right {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,4 +48,3 @@
   border: 1px solid #2a2a2a;
   box-shadow: none;
 }
-

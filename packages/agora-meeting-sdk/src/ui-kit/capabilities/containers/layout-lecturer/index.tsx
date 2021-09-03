@@ -4,9 +4,7 @@ import './index.css';
 import classNames from 'classnames';
 import {
   RenderInfoType,
-  useGlobalContext,
   useMediaContext,
-  useRenderContext,
 } from 'agora-meeting-core';
 import { MettingVideoPlayerList, MettingVideoPlayer } from '../video-player';
 import { NetworkQuality } from '../network-quality';

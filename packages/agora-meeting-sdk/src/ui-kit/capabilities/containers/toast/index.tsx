@@ -56,6 +56,8 @@ export const ToastContainer = observer(() => {
     'record.tip': (props: any) => toast('record.tip', props, 'error'),
     'record.is_not_owner': (props: any) =>
       toast('record.is_not_owner', props, 'error'),
+      'toast.err_oss_host': (props: any) =>
+      toast('toast.err_oss_host', props, 'error'),
     'toast.copy_success': (props: any) => toast('toast.copy_success', props),
   };
 

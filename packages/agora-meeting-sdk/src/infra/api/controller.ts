@@ -1,9 +1,7 @@
 import { unmountComponentAtNode } from 'react-dom';
-import { AgoraEvent } from './declare';
 import { render } from 'react-dom';
 import { ReactElement } from 'react';
-import { RoomCache } from 'agora-meeting-core';
-import { cloneDeep } from 'lodash';
+import { RoomCache, AgoraEvent } from 'agora-meeting-core';
 import { GlobalStorage } from '../storage';
 
 export enum SDKInternalStateEnum {
@@ -39,6 +37,8 @@ export class SDKController<T extends RoomAbstractStore> {
   public callback!: EventCallableFunction;
   public _storeDestroy!: CallableFunction;
   private _state: SDKInternalStateEnum = SDKInternalStateEnum.Created;
+  // 自定义数据存放
+  private _data: any = {};
 
   private _lock: boolean = false;
 
@@ -57,6 +57,14 @@ export class SDKController<T extends RoomAbstractStore> {
     return this._lock;
   }
 
+  get isInitialized(): boolean {
+    return this.state === SDKInternalStateEnum.Initialized;
+  }
+
+  get state() {
+    return this._state;
+  }
+
   acquireLock() {
     this._lock = true;
     return () => {
@@ -64,17 +72,19 @@ export class SDKController<T extends RoomAbstractStore> {
     };
   }
 
-  get isInitialized(): boolean {
-    return this.state === SDKInternalStateEnum.Initialized;
-  }
-
   // 对外
   getRoom() {
     return this.room;
   }
 
-  get state() {
-    return this._state;
+  // 设置自定义数据
+  setData(name: string, value: any) {
+    this._data[name] = value;
+  }
+
+  // 获取自定义数据
+  getData(name: string) {
+    return this._data[name];
   }
 
   create(
@@ -99,8 +109,11 @@ export class SDKController<T extends RoomAbstractStore> {
     }
     unmountComponentAtNode(this.dom);
     this._state = SDKInternalStateEnum.Destroyed;
-    const roomCache = GlobalStorage.read('agora_meeting_room_cache') || {};
-    this.callback(AgoraEvent.destroyed, roomCache);
+    const roomCache = this.getData('agora_meeting_room_cache') || {};
+    const event =
+      this.getData('agora_meeting_room_event') || AgoraEvent.LeaveInitiative;
+    this.callback(event, roomCache);
+    this._data = {};
   }
 }
 

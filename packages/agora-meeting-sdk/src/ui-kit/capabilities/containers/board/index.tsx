@@ -11,9 +11,6 @@ import { ColorsContainer } from './colors';
 import { PensContainer } from './pens';
 
 import {
-  Icon,
-  TabPane,
-  Tabs,
   Toolbar,
   ToolItem,
   transI18n,

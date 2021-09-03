@@ -1,47 +1,47 @@
-.toolbar {
+.meeting-toolbar {
   width: 42px;
   background-color: white;
 }
 
-.toolbar.opened {
+.meeting-toolbar.opened {
   box-shadow: 0px 2px 8px 0px rgba(47, 65, 146, 0.15);
   border-radius: 21px;
   height:100%;
 }
 
-.toolbar .menu {
+.meeting-toolbar .menu {
   @apply flex justify-center items-center cursor-pointer;
 }
 
-.toolbar .menu.fold {
+.meeting-toolbar .menu.fold {
   width: 42px;
   height: 42px;
   box-shadow: 0px 2px 8px 0px rgba(47, 65, 146, 0.15);
   border-radius: 0px 21px 21px 0px;
 }
 
-.toolbar .menu.unfold {
+.meeting-toolbar .menu.unfold {
   width: 42px;
   height: 42px;
   box-shadow: none;
   border-radius: none;
 }
 
-.toolbar > .tools {
+.meeting-toolbar > .tools {
   @apply hidden;
   overflow-y: scroll;
   height: calc(100% - 42px);
 }
 
-.toolbar > .tools::-webkit-scrollbar {
+.meeting-toolbar > .tools::-webkit-scrollbar {
   width: 0;
 }
 
-.toolbar.opened > .tools {
+.meeting-toolbar.opened > .tools {
   @apply flex flex-col items-center;
 }
 
-.toolbar-shadow {
+.meeting-toolbar .toolbar-shadow {
   bottom: -2px;
   position: absolute;
   height: 20px;
@@ -51,7 +51,7 @@
   box-shadow: 0px -4px 6px 0px rgb(47 65 146 / 15%);
 }
 
-.toolbar-shadow.hidden {
+.meeting-toolbar .toolbar-shadow.hidden {
   box-shadow: none;
 }
 
@@ -82,7 +82,7 @@
   color: #7b88a0;
 }
 
-.toolbar.opened .tools .tool:last-child {
+.meeting-toolbar.opened .tools .tool:last-child {
   margin-bottom: 25px;
 }
 

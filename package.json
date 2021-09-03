@@ -47,6 +47,7 @@
     "build:apaas": "run-s build:demo",
     "pack:sdk": "run-s build:rte-sdk build:classroom:sdk",
     "build:classroom:sdk": "lerna exec --scope=agora-meeting-sdk npm run pack:npm",
+    "build:meeting:sdk": "lerna exec --scope=agora-meeting-sdk npm run pack:npm",
     "build:dev:rte-sdk": "lerna exec --scope=agora-rte-sdk npm run build:dev",
     "build:rte-sdk": "lerna exec --scope=agora-rte-sdk npm run build",
     "build:dev:core": "lerna exec --scope=agora-meeting-core npm run build:dev:js",

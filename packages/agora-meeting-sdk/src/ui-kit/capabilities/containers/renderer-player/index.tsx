@@ -1,7 +1,12 @@
-import { VideoPlayerConfig, IMediaRenderer } from 'agora-meeting-core';
+import {
+  VideoPlayerConfig,
+  IMediaRenderer,
+  UserInfo,
+} from 'agora-meeting-core';
 import classnames from 'classnames';
 import * as React from 'react';
 import { useRendererPlayer } from '@/ui-kit/hooks';
+import { getAvatarUrl } from '~ui-kit';
 import './index.css';
 
 export interface RendererPlayerProps {
@@ -14,12 +19,15 @@ export interface RendererPlayerProps {
   children?: any;
   videoPlayerConfig?: VideoPlayerConfig;
   placeholderComponent?: React.ReactElement;
+  userInfo?: UserInfo;
 }
 
 export const RendererPlayer = (props: RendererPlayerProps) => {
   const cls = classnames('renderer-player ', {
     [`${props.className}`]: !!props.className,
   });
+
+  const userInfo = props?.userInfo || { userName: '' };
 
   const ref = useRendererPlayer<HTMLDivElement>(props);
 
@@ -34,7 +42,14 @@ export const RendererPlayer = (props: RendererPlayerProps) => {
       }
       id={props.id ? props.id : ''}
       ref={ref}>
-      {props.children ? props.children : null}
+      {props.children ? (
+        props.children
+      ) : userInfo.userName ? (
+        <img
+          className="avatar"
+          src={getAvatarUrl(userInfo.userName)}
+          alt=""></img>
+      ) : null}
     </div>
   );
 };

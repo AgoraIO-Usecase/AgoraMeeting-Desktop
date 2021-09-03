@@ -31,7 +31,7 @@ export const Setting: FC<SettingProps> = observer(
     } = useMessagesContext();
 
     const cls = classnames({
-      [`setting`]: 1,
+      [`meeting-setting`]: 1,
       [`${className}`]: !!className,
     });
 

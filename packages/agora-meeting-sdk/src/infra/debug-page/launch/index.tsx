@@ -1,4 +1,4 @@
-import AgoraMeetingSDK, { AgoraEvent } from '../../api';
+import AgoraMeetingSDK from '../../api';
 import { Room, RoomAbstractStore, controller } from '../../api/controller';
 import { useHomeStore } from '@/infra/hooks';
 import { isEmpty } from 'lodash';
@@ -6,7 +6,7 @@ import { observer } from 'mobx-react';
 import { useCallback, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { GlobalStorage } from '@/infra/storage';
-import { RoomCache } from 'agora-meeting-core';
+import { RoomCache, AgoraEvent } from 'agora-meeting-core';
 import { Rating } from './rating/index';
 import { Modal } from '~components/modal';
 import Notification from 'rc-notification';
@@ -82,11 +82,12 @@ export const LaunchPage = observer(() => {
             // TODO:  这里需要传递开发者自己发布的录制页面地址
             recordUrl: REACT_APP_AGORA_APP_RECORD_URL
               ? `${REACT_APP_AGORA_APP_RECORD_URL}`
-              : `https://webdemo.agora.io/agorameeting/test/dev_apaas_meeting_1.0.1/record_page`,
+              : `https://webdemo.agora.io/agorameeting/prod/release_apaas_meeting_1.0.2/record_page`,
 
             listener: (evt: AgoraEvent, cache?: RoomCache) => {
               console.log('meeting sdk #listener ', evt, cache);
-              if (evt === AgoraEvent.destroyed) {
+              if (evt !== AgoraEvent.ready) {
+                // 退出
                 showRatingDialog();
                 GlobalStorage.clear();
               }

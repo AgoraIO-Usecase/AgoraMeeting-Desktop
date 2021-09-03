@@ -32,7 +32,7 @@ export const Placeholder: FC<PlaceholderProps> = ({
   ...restProps
 }) => {
   const cls = classnames({
-    [`placeholder`]: 1,
+    [`meeting-placeholder`]: 1,
     [`${className}`]: !!className,
   });
   return (

@@ -98,7 +98,7 @@
   box-sizing: border-box;
 }
 
-.member__footer .all-mute,
+.metting-member .member__footer .all-mute,
 .all-close-camera {
   width: 112px;
   height: 30px;
@@ -112,9 +112,9 @@
   @apply cursor-pointer;
 }
 
-.member__footer .all-mute {
+.metting-member .member__footer .all-mute {
   margin-right: 16px;
 }
 
-.member__footer .all-close-camera {
+.metting-member .member__footer .all-close-camera {
 }

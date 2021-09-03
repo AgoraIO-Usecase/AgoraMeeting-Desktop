@@ -1,4 +1,4 @@
-import { RenderInfo } from 'agora-meeting-core';
+import { RenderInfo,AgoraEvent } from 'agora-meeting-core';
 
 export enum RoleTypeEnum {
   none = -1,
@@ -24,10 +24,6 @@ export interface RoomComponentConfigProps<T> {
   dom: Element;
 }
 
-export enum AgoraEvent {
-  ready = 1,
-  destroyed = 2,
-}
 
 export type MeetingConfig = {
   appId: string;
