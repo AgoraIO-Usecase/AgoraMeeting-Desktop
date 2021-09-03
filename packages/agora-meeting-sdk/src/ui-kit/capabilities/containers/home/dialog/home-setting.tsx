@@ -30,7 +30,7 @@ export const HomeSettingDialog: FC<HomeSettingDialogProps> = ({
 
 
   const cls = classnames({
-    [`setting`]: 1,
+    [`meeting-setting`]: 1,
     [`${className}`]: !!className,
   });
   const onClickDisclaimer = () => {
