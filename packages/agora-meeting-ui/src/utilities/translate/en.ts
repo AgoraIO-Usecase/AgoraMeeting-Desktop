@@ -1,5 +1,4 @@
 export const en = {
-  en: 'English',
   send: 'Send',
   end: 'End',
   confirm: 'Confirm',
@@ -20,13 +19,18 @@ export const en = {
   loading: 'Loading…',
   admin: 'Host',
   member: 'Member',
-  member_list:"Attendess list",
-  search_member :'Search attendess',
+  member_list: 'Attendess list',
+  search_member: 'Search attendess',
   suspend: 'Suspend',
   me: 'Me',
   host: 'Host',
   view_lecturer: 'View lecturer',
   view_tile: 'View tile',
+  language: {
+    zh: 'Chinese',
+    en: 'English',
+    select: 'Language select',
+  },
   about: {
     title: 'About',
     check_upgrade: 'Check upgrade',
@@ -87,7 +91,7 @@ export const en = {
   },
   whiteboard: {
     converting: 'Converting',
-    title: 'WhiteBoard',
+    title: 'White Board',
     enter: 'Enter WhiteBoard',
     end: 'Close whiteboard',
     join: 'Join editing',
@@ -121,10 +125,10 @@ export const en = {
     screen_sharing: 'You are screen sharing',
     become_host: 'Become host',
     screen_share: 'Screen Share',
-    whiteboard: 'WhiteBoard',
+    whiteboard: 'White Board',
     record: 'Record',
-    am:"AM",
-    pm:"PM"
+    am: 'AM',
+    pm: 'PM',
   },
   device: {
     camera: 'Camera',
@@ -176,7 +180,7 @@ export const en = {
     board_ongoing: 'Whiteboard is ongoing',
     screen_ongoing: 'Screen share is ongoing',
     copy_success: 'Copy success',
-    err_oss_host:"Cannot acquire oss host",
+    err_oss_host: 'Cannot acquire oss host',
   },
   scaffold: {
     search: 'Search',
@@ -278,6 +282,7 @@ export const en = {
     mic_approve: 'Permission needed to turn mic on',
     ai_noise: 'Ai audio noise reduction (Coming soon)',
     turn_off_notify: 'Turn off in/out notifications',
+    log: 'Problems encountered upload log',
   },
   notify: {
     popup_apply_audio_title: '{name} applied to turn on the microphone',
@@ -354,6 +359,7 @@ export const en = {
       'Only the host can initiate recording. Please apply to be the host first',
     is_not_owner:
       'You are not the initiator of this recording and cannot operate this recording',
+    recording: 'Recording',
   },
   rating: {
     title: 'Rate',

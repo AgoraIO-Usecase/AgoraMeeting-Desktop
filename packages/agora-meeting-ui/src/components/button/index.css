@@ -10,7 +10,7 @@
 }
 
 .btn-danger {
-  @apply text-danger bg-white border-danger border; 
+  @apply text-danger bg-white border-danger border;
 }
 
 .btn-danger:hover {
@@ -46,7 +46,8 @@
 }
 
 .btn-sm {
-  width: 80px;
+  padding: 0 5px;
+  min-width: 80px;
   height: 30px;
   line-height: 30px;
   font-size: 14px;
@@ -54,7 +55,8 @@
 }
 
 .btn-lg {
-  width: 280px;
+  padding: 0 5px;
+  min-width: 280px;
   height: 40px;
   font-size: 16px;
   overflow: hidden;

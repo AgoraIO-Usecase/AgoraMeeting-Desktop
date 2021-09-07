@@ -7,10 +7,11 @@ import { MediaSetting } from './media-setting';
 import { RoomSetting } from './room-setting';
 import { PersonSetting } from './person-setting';
 import { observer } from 'mobx-react';
-import { useMessagesContext } from 'agora-meeting-core';
+import { useMediaContext, useMessagesContext } from 'agora-meeting-core';
 import { LogSetting } from './log-setting';
 import { SettingValue } from './declare';
 import './index.css';
+import { useUIStore } from '@/infra/hooks';
 
 export interface ISettingTab {
   text: string;
@@ -25,6 +26,7 @@ export interface SettingProps extends BaseProps {
 
 export const Setting: FC<SettingProps> = observer(
   ({ className, exclude, defaultHighlight }) => {
+    const { language } = useUIStore();
     const {
       setUserInOutNotificationLimitCount,
       inOutNotificationLimitCount,
@@ -35,36 +37,42 @@ export const Setting: FC<SettingProps> = observer(
       [`${className}`]: !!className,
     });
 
-    let tabs: ISettingTab[] = [
-      {
-        text: transI18n('setting.media'),
-        value: 'mediaSetting',
-        component: <MediaSetting></MediaSetting>,
-      },
-      {
-        text: transI18n('setting.person'),
-        value: 'personSetting',
-        component: (
-          <PersonSetting
-            setUserInOutNotificationLimitCount={
-              setUserInOutNotificationLimitCount
-            }
-            inOutNotificationLimitCount={
-              inOutNotificationLimitCount
-            }></PersonSetting>
-        ),
-      },
-      {
-        text: transI18n('setting.room'),
-        value: 'roomSetting',
-        component: <RoomSetting></RoomSetting>,
-      },
-      {
-        text: transI18n('log.title'),
-        value: 'logSetting',
-        component: <LogSetting></LogSetting>,
-      },
-    ];
+    let tabs: ISettingTab[] = useMemo(() => {
+      return [
+        {
+          text: transI18n('setting.media'),
+          value: 'mediaSetting',
+          component: <MediaSetting></MediaSetting>,
+        },
+        {
+          text: transI18n('setting.person'),
+          value: 'personSetting',
+          component: (
+            <PersonSetting
+              setUserInOutNotificationLimitCount={
+                setUserInOutNotificationLimitCount
+              }
+              inOutNotificationLimitCount={
+                inOutNotificationLimitCount
+              }></PersonSetting>
+          ),
+        },
+        {
+          text: transI18n('setting.room'),
+          value: 'roomSetting',
+          component: <RoomSetting></RoomSetting>,
+        },
+        {
+          text: transI18n('log.title'),
+          value: 'logSetting',
+          component: <LogSetting></LogSetting>,
+        },
+      ];
+    }, [
+      language,
+      inOutNotificationLimitCount,
+      setUserInOutNotificationLimitCount,
+    ]);
 
     if (exclude?.length) {
       tabs = tabs.filter((item) => !(exclude.indexOf(item.value) > -1));

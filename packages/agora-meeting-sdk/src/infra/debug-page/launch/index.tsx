@@ -5,13 +5,12 @@ import { isEmpty } from 'lodash';
 import { observer } from 'mobx-react';
 import { useCallback, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { GlobalStorage } from '@/infra/storage';
 import { RoomCache, AgoraEvent } from 'agora-meeting-core';
 import { Rating } from './rating/index';
 import { Modal } from '~components/modal';
 import Notification from 'rc-notification';
 import { RtmTokenBuilder, RtmRole } from 'agora-access-token';
-import { transI18n } from '~ui-kit';
+import { transI18n, setLanguage } from '~ui-kit';
 
 import 'rc-notification/assets/index.css';
 //@ts-ignore
@@ -39,10 +38,12 @@ export const LaunchPage = observer(() => {
           launchOption={launchOption}
           onSubmit={() => {
             Modal.hide();
+            setLanguage('zh');
             history.push('/');
           }}></Rating>
       ),
       onCancel: () => {
+        setLanguage('zh');
         history.push('/');
       },
     });
@@ -79,6 +80,10 @@ export const LaunchPage = observer(() => {
           }
           roomRef.current = await AgoraMeetingSDK.launch(dom, {
             ...launchOption,
+            userProperties: {
+              aaa: 'aaaa',
+              bbb: 'bbb',
+            },
             // TODO:  这里需要传递开发者自己发布的录制页面地址
             recordUrl: REACT_APP_AGORA_APP_RECORD_URL
               ? `${REACT_APP_AGORA_APP_RECORD_URL}`
@@ -89,7 +94,6 @@ export const LaunchPage = observer(() => {
               if (evt !== AgoraEvent.ready) {
                 // 退出
                 showRatingDialog();
-                GlobalStorage.clear();
               }
             },
           });

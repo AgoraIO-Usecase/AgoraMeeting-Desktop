@@ -28,10 +28,15 @@
   line-height: 17px;
 }
 
+.share-popover .item + .item {
+  margin-top: 2px;
+}
+
 .share-popover .item .left {
   flex: 0 0 72px;
   width: 72px;
   text-align: left;
+  white-space: nowrap;
 }
 
 .share-popover .item .right {

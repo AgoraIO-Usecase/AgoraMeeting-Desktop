@@ -20,6 +20,7 @@ import { useState } from 'react';
 export interface MettingMemberListProps extends BaseProps {}
 
 export const MettingMemberList: FC<MettingMemberListProps> = observer(() => {
+  const { language } = useUIStore();
   const { isHost, userDetailInfoList } = useUsersContext();
   const { setMemberVisible } = useUIStore();
   const { fireDialog } = useGlobalContext();

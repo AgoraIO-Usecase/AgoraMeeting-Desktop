@@ -1,4 +1,5 @@
-import { RenderInfo,AgoraEvent } from 'agora-meeting-core';
+import { RenderInfo, AgoraEvent } from 'agora-meeting-core';
+import { LanguageEnum } from '~ui-kit';
 
 export enum RoleTypeEnum {
   none = -1,
@@ -24,7 +25,6 @@ export interface RoomComponentConfigProps<T> {
   dom: Element;
 }
 
-
 export type MeetingConfig = {
   appId: string;
 };
@@ -42,8 +42,6 @@ export type ListenerCallback = (evt: AgoraEvent) => void;
 export type SDKConfig = {
   configParams: MeetingConfig;
 };
-
-export type LanguageEnum = 'en' | 'zh';
 
 export type LaunchConfig = {
   userId: string; // 用户id
@@ -63,8 +61,7 @@ export type LaunchConfig = {
   isRobot?: boolean; // 是否机器人
   userProperties?: Object;
   sdkDomain?: string;
-  // TODO:qinzhen:other params
-  // language: LanguageEnum; // 国际化
+  language?: LanguageEnum; // 国际化
 };
 
 // 视图展示模式

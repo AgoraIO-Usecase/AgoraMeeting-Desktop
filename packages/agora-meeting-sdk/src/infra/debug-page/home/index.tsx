@@ -1,33 +1,16 @@
-import { useHomeStore } from '@/infra/hooks';
-import { changeLanguage } from '~ui-kit';
+import { useHomeStore, useUIStore } from '@/infra/hooks';
 import { MettingHome } from '../../../ui-kit/capabilities/containers/home';
 import { observer } from 'mobx-react';
 import React, { useState, useMemo, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import MD5 from 'js-md5';
-import { useLayoutEffect } from 'react';
 import { GlobalStorage } from '../../storage';
+import { UIContextProvider } from '../../../infra/api/index';
 
 const DEFAULT_IN_OUT_NOTIFICATION_LIMIT_COUNT = 50;
 
 export const HomePage = observer(() => {
   const homeStore = useHomeStore();
-  const [language, setLanguage] = useState<string>(
-    'zh',
-    // sessionStorage.getItem('language') || 'zh',
-  );
-
-  useLayoutEffect(() => {
-    changeLanguage(language);
-    setLanguage(language);
-  }, [language]);
-
-  // 语言切换
-  const onChangeLanguage = (language: string) => {
-    // sessionStorage.setItem('language', language);
-    changeLanguage(language);
-    setLanguage(language);
-  };
 
   const text = {
     userName: '',
@@ -36,6 +19,7 @@ export const HomePage = observer(() => {
     openMic: true,
     openCamera: true,
     userInOutNotificationLimitCount: DEFAULT_IN_OUT_NOTIFICATION_LIMIT_COUNT,
+    language: 'zh',
   };
 
   const history = useHistory();
@@ -43,7 +27,6 @@ export const HomePage = observer(() => {
   const onClickJoin = async () => {
     homeStore.setLaunchConfig({
       pretest: true,
-      language: language,
       token: '',
       isRobot: false,
       roomName: text.roomName,
@@ -60,22 +43,25 @@ export const HomePage = observer(() => {
         GlobalStorage.read('inOutLimitCount') ||
         text.userInOutNotificationLimitCount,
       sdkDomain: `${REACT_APP_AGORA_APP_SDK_DOMAIN}`,
+      language: text.language,
     });
     history.push('/launch');
   };
 
   return (
-    <MettingHome
-      language={language}
-      defaultOpenMic={text.openMic}
-      defaultOpenCamera={text.openCamera}
-      onChangeRoomName={(v) => (text.roomName = v)}
-      onChangeRoomPassword={(v) => (text.password = v)}
-      onChangeUserName={(v) => (text.userName = v)}
-      onChangeMic={(v) => {
-        text.openMic = v;
-      }}
-      onChangeCamera={(v) => (text.openCamera = v)}
-      join={onClickJoin}></MettingHome>
+    <UIContextProvider>
+      <MettingHome
+        defaultOpenMic={text.openMic}
+        defaultOpenCamera={text.openCamera}
+        onChangeRoomName={(v) => (text.roomName = v)}
+        onChangeRoomPassword={(v) => (text.password = v)}
+        onChangeUserName={(v) => (text.userName = v)}
+        onChangeMic={(v) => {
+          text.openMic = v;
+        }}
+        onChangeLanguage={(v) => (text.language = v)}
+        onChangeCamera={(v) => (text.openCamera = v)}
+        join={onClickJoin}></MettingHome>
+    </UIContextProvider>
   );
 });

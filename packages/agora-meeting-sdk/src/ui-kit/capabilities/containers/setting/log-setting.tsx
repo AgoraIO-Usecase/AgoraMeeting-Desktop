@@ -53,7 +53,7 @@ export const LogSetting: FC<LogSettingProps> = observer(() => {
 
   return (
     <div className="log-setting">
-      <div>遇到问题上传日志</div>
+      <div>{transI18n('setting.log')}</div>
       <div>
         <span className={btnCls} onClick={(e) => onClickUploadLog()}>
           <span className='text'>{text}</span>

@@ -114,7 +114,11 @@
 
 .metting-member .member__footer .all-mute {
   margin-right: 16px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .metting-member .member__footer .all-close-camera {
+  overflow: hidden;
+  white-space: nowrap;
 }

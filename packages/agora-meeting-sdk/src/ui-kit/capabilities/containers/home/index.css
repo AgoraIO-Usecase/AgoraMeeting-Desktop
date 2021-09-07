@@ -65,13 +65,13 @@
   text-align: center;
 }
 
-.metting-home  .login__center .logo-img {
+.metting-home .login__center .logo-img {
   flex: 0 0 auto;
   width: 88px;
   height: 59px;
 }
 
-.metting-home  .login__center .logo-text {
+.metting-home .login__center .logo-text {
   margin-top: 8px;
   flex: 0 0 28px;
   height: 28px;
@@ -83,45 +83,49 @@
   margin-bottom: 52px;
 }
 
-.metting-home  .login__center .icon-close {
+.metting-home .login__center .icon-close {
   width: 20px;
   height: 20px;
   background: url('../../../assets/close@2x.png');
   opacity: 0.5;
 }
 
-.metting-home  .login__center .icon-close:hover {
+.metting-home .login__center .icon-close:hover {
   opacity: 1;
 }
 
-.metting-home  .login__center .icon-inactive {
+.metting-home .login__center .icon-inactive {
   width: 20px;
   height: 20px;
   background: url('../../../assets/inactive@2x.png');
 }
 
-.metting-home  .login__center .icon-close::before {
+.metting-home .login__center .icon-close::before {
   content: '';
 }
 
-.metting-home  .login__center .room-pwd-icon-wrapper {
+.metting-home .login__center .room-pwd-icon-wrapper {
   display: flex;
   align-items: center;
 }
 
-.metting-home  .home-popover > .popover-content > .popover-inner > .popover-inner-content {
+.metting-home
+  .home-popover
+  > .popover-content
+  > .popover-inner
+  > .popover-inner-content {
   padding: 10px;
 }
 
-.metting-home  .home-popover .popover-content {
+.home-popover .popover-content {
   font-size: 12px;
   font-weight: 400;
   color: #323c47;
   line-height: 20px;
-  white-space: pre;
+  white-space: pre-line;
 }
 
-.metting-home  .login__center .btn-add {
+.metting-home .login__center .btn-add {
   margin-top: 22px;
   height: 42px;
   line-height: 42px;
@@ -135,7 +139,7 @@
   @apply cursor-pointer;
 }
 
-.metting-home  .login__center .tip {
+.metting-home .login__center .tip {
   display: flex;
   flex-direction: row;
   margin-top: 20px;
@@ -145,18 +149,18 @@
   padding: 15px 10px 20px 10px;
 }
 
-.metting-home  .login__center .tip .icon-tip {
+.metting-home .login__center .tip .icon-tip {
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
   background: url('../../../assets/horn@2x.png');
 }
 
-.metting-home  .login__center .input-wrapper + .input-wrapper {
+.metting-home .login__center .input-wrapper + .input-wrapper {
   margin-top: 20px;
 }
 
-.metting-home  .login__center .tip .text {
+.metting-home .login__center .tip .text {
   margin-left: 10px;
   flex: 1 1 auto;
   font-size: 12px;
@@ -167,7 +171,7 @@
   text-align: left;
 }
 
-.metting-home  .login__center .checkbox-wrapper {
+.metting-home .login__center .checkbox-wrapper {
   margin-top: 20px;
   height: 18px;
   width: 100%;
@@ -176,7 +180,7 @@
   justify-content: flex-start;
 }
 
-.metting-home  .login__center .checkbox-text {
+.metting-home .login__center .checkbox-text {
   margin-left: 10px;
   height: 18px;
   font-size: 12px;
@@ -186,6 +190,6 @@
 }
 
 /* 底部 */
-.metting-home  .login__bottom {
+.metting-home .login__bottom {
   height: 50px;
 }

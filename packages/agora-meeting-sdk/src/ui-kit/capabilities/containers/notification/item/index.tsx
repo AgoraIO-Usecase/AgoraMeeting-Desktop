@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  useState,
-  MouseEvent,
-  useEffect,
-  useRef,
-  useMemo,
-} from 'react';
+import React, { FC, useState, useEffect, useMemo } from 'react';
 import { BaseProps } from '~components/interface/base-props';
 import classnames from 'classnames';
 import './index.css';
@@ -15,7 +8,7 @@ import {
   useMessagesContext,
   useUsersContext,
 } from 'agora-meeting-core';
-import { transI18n, changeLanguage } from '~ui-kit';
+import { transI18n, language } from '~ui-kit';
 import { observer } from 'mobx-react';
 import { transformNotifyMessageContent } from '@/ui-kit/utils';
 
@@ -98,7 +91,7 @@ export const MettingNotificationItem: FC<MettingNotificationItemProps> = observe
       display: isRender ? 'block' : 'none',
     };
 
-    const btnText = useMemo(() => {
+    const getBtnText = () => {
       switch (type) {
         case NotifyMessageType.USER_APPROVE_APPLY_CAM:
           return transI18n('allow');
@@ -119,7 +112,9 @@ export const MettingNotificationItem: FC<MettingNotificationItemProps> = observe
         default:
           return null;
       }
-    }, [type, localUserInfo, payload]);
+    };
+
+    const btnText = getBtnText();
 
     return (
       <div className="metting-notification-item" style={finalStyle}>

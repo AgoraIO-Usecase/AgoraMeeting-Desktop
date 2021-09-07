@@ -2,7 +2,6 @@ import { unmountComponentAtNode } from 'react-dom';
 import { render } from 'react-dom';
 import { ReactElement } from 'react';
 import { RoomCache, AgoraEvent } from 'agora-meeting-core';
-import { GlobalStorage } from '../storage';
 
 export enum SDKInternalStateEnum {
   Created = 'created',

@@ -60,7 +60,6 @@ export const RouteContainer = (props: RouteContainerProps) => {
 };
 
 export type RoomContainerParams = {
-  language: any;
   params: AppStoreInitParams;
   routes: BizPageRouter[];
   mainPath: string;
@@ -68,7 +67,7 @@ export type RoomContainerParams = {
 
 export const RoomContainer = (props: RoomContainerParams) => {
   return (
-    <I18nProvider language={props.language}>
+    <I18nProvider >
       <MemoryRouter>
         <RouteContainer
           routes={props.routes}

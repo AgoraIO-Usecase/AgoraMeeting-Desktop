@@ -13,7 +13,7 @@ const routes: BizPageRouter[] = [
 
 export const LiveRoom = observer(() => {
 
-  const {mainPath, language, params} = useGlobalContext()
+  const {mainPath, params} = useGlobalContext()
     
   return (
     <>
@@ -21,7 +21,6 @@ export const LiveRoom = observer(() => {
     <RoomContainer
       mainPath={mainPath!}
       routes={routes}
-      language={language}
       params={params}
     />
     </>

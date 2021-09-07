@@ -9,9 +9,16 @@ import { UIStore } from '@/infra/stores/app/ui';
 import { useState, ReactChild } from 'react';
 import { UIContext } from '@/infra/hooks';
 import packagejson from '../../../package.json';
+import { setLanguage, LanguageEnum } from '~ui-kit';
 
-export const UIContextProvider = ({ children }: { children: ReactChild }) => {
-  const [store] = useState<UIStore>(() => new UIStore());
+export const UIContextProvider = ({
+  language,
+  children,
+}: {
+  language?: LanguageEnum;
+  children: ReactChild;
+}) => {
+  const [store] = useState<UIStore>(() => new UIStore({ language }));
 
   return <UIContext.Provider value={store}>{children}</UIContext.Provider>;
 };
@@ -22,7 +29,7 @@ export default class AgoraMeetingSDK {
     version: packagejson.version,
     rtcVersion: '4.5.0',
     rtmVersion: '1.4.2',
-    whiteBoardVersion: '2.12.14',
+    whiteBoardVersion: '2.12.21',
   };
 
   static config = {
@@ -105,19 +112,24 @@ export default class AgoraMeetingSDK {
         roomPath: roomPath,
         pretest: option.pretest,
       };
+      // 设置语言
+      if (option.language) {
+        setLanguage(option.language);
+      }
 
       controller.appController.create(
         <CoreContextProvider
           params={params}
           dom={dom}
           controller={controller.appController}>
-          <UIContextProvider>
+          <UIContextProvider language={option.language}>
             <LiveRoom />
           </UIContextProvider>
         </CoreContextProvider>,
         dom,
         option.listener,
       );
+
       unlock();
     } catch (err) {
       unlock();

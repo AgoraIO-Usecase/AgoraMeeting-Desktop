@@ -1,9 +1,8 @@
 import React, { FC, useState } from 'react';
 import { BaseProps } from '~components/interface/base-props';
-import { FooterItemProps, FooterItem } from './footer-item';
+import { FooterItem } from './footer-item';
 import { PopoverScreen } from './popover-screen';
-import { Popover, t } from '~ui-kit';
-import classnames from 'classnames';
+import { Popover, transI18n } from '~ui-kit';
 import { observer } from 'mobx-react';
 import {
   LocalDeviceState,
@@ -28,7 +27,8 @@ import { useUIStore } from '@/infra/hooks';
 export interface FooterProps extends BaseProps {}
 
 export const MettingFooter: FC<FooterProps> = observer(({}) => {
-  const { memberVisible, setMemberVisible } = useUIStore();
+  // watch language to update
+  const { memberVisible, setMemberVisible, language } = useUIStore();
   const { fireDialog } = useGlobalContext();
   const { chatVisible, setChatVisible } = useMessagesContext();
   const {
@@ -130,11 +130,15 @@ export const MettingFooter: FC<FooterProps> = observer(({}) => {
     <section className="metting-footer">
       <div className="footer__center">
         <FooterItem
+          key="audio"
+          text={transI18n('device.camera')}
           status={micLocalDeviceState}
           type="audio"
           onClick={handleMicClick}
           countdown={micApprovingCountdown}></FooterItem>
         <FooterItem
+          key="video"
+          text={transI18n('device.camera')}
           status={cameraLocalDeviceState}
           type="video"
           onClick={handleCameraClick}
@@ -144,24 +148,34 @@ export const MettingFooter: FC<FooterProps> = observer(({}) => {
           overlayClassName="screen-popover"
           placement="top"
           content={<PopoverScreen></PopoverScreen>}>
-          <FooterItem status={shareState} type="screen-share"></FooterItem>
+          <FooterItem
+            key="screen-share"
+            status={shareState}
+            type="screen-share"
+            text={transI18n('main.screen_share')}></FooterItem>
         </Popover>
         <FooterItem
+          text={transI18n('main.record')}
           status={recordState}
           type="record"
+          key="record"
           onClick={handleRecord}></FooterItem>
         <FooterItem
+          text={transI18n('main.chat')}
           status={chatVisible}
           type="chat"
+          key="chat"
           num={unreadChatMessageCount}
           onClick={handleChat}></FooterItem>
         <FooterItem
+          text={transI18n('main.member')}
           status={memberVisible}
           type="members"
+          key="members"
           onClick={handleMember}></FooterItem>
       </div>
       <div className="footer__right" onClick={(e) => handleRoomEnd()}>
-        {t('main.exit_meeting')}
+        {transI18n('main.exit_meeting')}
       </div>
     </section>
   );

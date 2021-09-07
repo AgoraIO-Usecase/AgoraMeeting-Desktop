@@ -16,7 +16,6 @@ import dayjs from 'dayjs';
 import './index.css';
 import { useUIStore } from '@/infra/hooks';
 import { transI18n } from '~ui-kit';
-import { useLayoutEffect } from 'react';
 
 export interface HeaderProps {}
 
@@ -125,7 +124,9 @@ export const MettingHeader: FC<HeaderProps> = observer(({}) => {
         {recordState === RecordState.recording ? (
           <div className="record__wrapper">
             <i className="icon icon-recording" />
-            <span className="text">录制中 {finRecordTime} </span>
+            <span className="text">
+              {transI18n('record.recording')} {finRecordTime}{' '}
+            </span>
           </div>
         ) : null}
       </div>

@@ -6,7 +6,7 @@ import { ISettingTab } from '../../setting';
 import { transI18n } from '~ui-kit';
 import { Modal } from '~ui-kit';
 import { PersonSetting } from '@/ui-kit/capabilities/containers/setting/person-setting';
-import { AboutSetting } from '@/ui-kit/capabilities/containers/home/dialog/about-setting';
+import { AboutSetting } from './about-setting';
 import { useState } from 'react';
 import AgoraMeetingSDK from '@/infra/api/index';
 import { useMemo } from 'react';
@@ -16,13 +16,11 @@ import { GlobalStorage } from '@/infra/storage';
 
 
 export interface HomeSettingDialogProps extends BaseProps {
-  language?: string;
   visible: boolean;
   onVisibleChange?: (val: boolean) => void;
 }
 
 export const HomeSettingDialog: FC<HomeSettingDialogProps> = ({
-  language = 'zh',
   className,
   visible = false,
   onVisibleChange,
@@ -54,7 +52,6 @@ export const HomeSettingDialog: FC<HomeSettingDialogProps> = ({
       component: (
         <AboutSetting
           {...AgoraMeetingSDK.perform}
-          language={language}
           onClickDisclaimer={onClickDisclaimer}></AboutSetting>
       ),
     },

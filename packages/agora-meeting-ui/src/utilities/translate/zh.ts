@@ -1,5 +1,4 @@
 export const zh = {
-  zh: '中文',
   end: '结束',
   confirm: '确认',
   continue: '继续',
@@ -25,6 +24,11 @@ export const zh = {
   host: '主持人',
   view_lecturer: '演讲者视图',
   view_tile: '平铺视图',
+  language:{
+    zh: '中文',
+    en: '英语',
+    select:'语言选择'
+  },
   about: {
     title: '关于',
     check_upgrade: '检查更新',
@@ -98,6 +102,7 @@ export const zh = {
     mic_approve: '开启麦克风需审批',
     ai_noise: 'Ai降噪（敬请期待）',
     turn_off_notify: '关闭进出通知',
+    log:"遇到问题上传日志"
   },
   whiteboard: {
     converting: '转换中',
@@ -333,6 +338,7 @@ export const zh = {
     record_success: '云录制已完成请复制链接保存，录制保存14天',
     tip: '只有主持人可以发起录制，请先申请成为主持人',
     is_not_owner: '您不是本次录制发起者，无法操作本次录制',
+    recording:"录制中"
   },
   rating: {
     title: '评分',

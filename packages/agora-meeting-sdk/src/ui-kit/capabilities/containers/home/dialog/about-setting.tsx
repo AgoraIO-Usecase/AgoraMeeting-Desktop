@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import classnames from 'classnames';
 import { BaseProps } from '~components/interface/base-props';
 import { Modal } from '~components';
-import { t, transI18n } from '~components/i18n';
+import { t, transI18n, language } from '~components/i18n';
 import { useGlobalContext } from 'agora-meeting-core';
 import { observer } from 'mobx-react';
 import { useMemo } from 'react';
@@ -11,7 +11,6 @@ import logoSrc from '@/ui-kit/assets/logo@2x.png';
 import '../../../containers/setting/index.css';
 
 export interface AboutSettingProps extends BaseProps {
-  language: string;
   whiteBoardVersion: string;
   rtcVersion: string;
   rtmVersion: string;
@@ -23,17 +22,17 @@ export const AboutSetting: FC<AboutSettingProps> = ({
   whiteBoardVersion = '',
   rtcVersion = '',
   rtmVersion = '',
-  language = 'zh',
   version = '',
   onClickDisclaimer,
 }) => {
+  const thislanguage = language;
   const policyHref = useMemo(() => {
-    if (language === 'zh') {
+    if (thislanguage === 'zh') {
       return 'https://www.agora.io/cn/privacy-policy/';
     } else {
       return 'https://www.agora.io/en/privacy-policy/';
     }
-  }, [language]);
+  }, [thislanguage]);
 
   return (
     <div className="about-setting">

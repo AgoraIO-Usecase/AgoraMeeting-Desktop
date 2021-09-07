@@ -44,7 +44,7 @@ export const Stars: FC<StarsProps> = ({
     <span className="star-wrapper">
       {stars}
       <span className="text">
-        {transI18n('rating.star', { num: star + '' })}
+        {transI18n('rating.star', { num: star + ' ' })}
       </span>
     </span>
   );

@@ -3,13 +3,8 @@ import { BaseProps } from '~components/interface/base-props';
 import { ChatMessageItem } from './item';
 import { Placeholder } from '~components/placeholder';
 import { Button } from '~components/button';
-import {
-  useMessagesContext,
-  ChatMessage,
-  useGlobalContext,
-} from 'agora-meeting-core';
+import { useMessagesContext, ChatMessage } from 'agora-meeting-core';
 import { observer } from 'mobx-react';
-import { toJS } from 'mobx';
 import { useUIStore } from '@/infra/hooks';
 import './index.css';
 import dayjs from 'dayjs';
@@ -20,6 +15,7 @@ const SECONDS_GAP = 60 * 2;
 export interface ChatProps extends BaseProps {}
 
 export const MettingChat: FC<ChatProps> = observer(() => {
+  const { language } = useUIStore();
   const [chatText, setChatText] = useState('');
   const [focused, setFocused] = useState<boolean>(false);
   const handleFocus = () => setFocused(true);

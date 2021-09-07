@@ -129,8 +129,7 @@ export const Rating: FC<RatingProps> = observer(
           </span>
         </div>
         <div className="rating-item">
-          <span className="left"></span>
-          <span className="right">
+          <span className="center">
             <span className="btn-submit" onClick={(e) => submit()}>
               {transI18n('submit')}
             </span>

@@ -4,6 +4,7 @@ import { RenderInfo, RenderInfoType, RoleTypeEnum } from 'agora-meeting-core';
 import { remove, once } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
 import { UpoladLogState } from '../../api/declare';
+import { language as l, LanguageEnum, setLanguage } from '~ui-kit';
 
 export type DialogType = {
   id: string;
@@ -31,18 +32,16 @@ let MIN_ORDER = -1000;
 let HOST_ORDER = 100;
 
 export class UIStore {
-  static languages: any[] = [
-    {
-      text: '中文',
-      name: 'zh-CN',
-    },
-    {
-      text: 'En',
-      name: 'en',
-    },
-  ];
-
+  constructor(props: any) {
+    if (props.language) {
+      this.language = props.language;
+    }
+  }
   // ------------------------- observable ---------------------------
+
+  // 语言
+  @observable
+  language: LanguageEnum = l;
 
   // 全局loading
   @observable
@@ -249,5 +248,12 @@ export class UIStore {
   @action.bound
   setUploadLogState(value: UpoladLogState) {
     this.uploadLogState = value;
+  }
+
+  @action.bound
+  setLanguage(lang: LanguageEnum) {
+    setLanguage(lang);
+    this.language = lang;
+    console.log('language', lang);
   }
 }

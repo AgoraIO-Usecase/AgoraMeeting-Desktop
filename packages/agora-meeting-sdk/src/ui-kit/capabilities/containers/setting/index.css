@@ -109,6 +109,10 @@
   line-height: 20px;
 }
 
+.person-setting .select-item + .select-item {
+  margin-top: 8px;
+}
+
 /* 房间设置 */
 .room-setting .body {
 }

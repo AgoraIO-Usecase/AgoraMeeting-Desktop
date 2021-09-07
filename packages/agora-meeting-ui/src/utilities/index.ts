@@ -54,22 +54,7 @@ export const formatFileSize = (fileByteSize: number, decimalPoint?: number) => {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + units[i];
 };
 
-export type I18nLanguage = 'zh' | 'en';
 
-export const translate = (lang: I18nLanguage, str: string, options?: any) => {
-  const textMap: Record<I18nLanguage, any> = config;
-  let result = get(textMap[lang], str, null);
-  if (result === null) {
-    console.warn(`[UI-KIT-WARN] translate: '${str}', isEmpty`);
-  }
-
-  if (!isEmpty(options)) {
-    if (options.reason && result.match(/\{.+\}/)) {
-      result = result.replace(/\{.+\}/, options.reason);
-    }
-  }
-  return result as string;
-};
 
 export const list = (num: number) => Array.from({ length: num }, (_, i) => i);
 

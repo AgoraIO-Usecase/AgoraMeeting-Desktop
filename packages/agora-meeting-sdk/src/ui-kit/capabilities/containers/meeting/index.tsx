@@ -9,7 +9,7 @@ import {
 import { RenderLayout } from '@/infra/api/declare';
 import { observer } from 'mobx-react';
 import { useCallback, useEffect, useState, useLayoutEffect } from 'react';
-import { MettingHeader } from '@/ui-kit/capabilities/containers/header';
+import { MettingHeader } from '../header';
 import { LayoutLecturer } from '../layout-lecturer';
 import { LayoutTile } from '../layout-tile';
 import { MettingFooter } from '../footer';
