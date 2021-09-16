@@ -1,4 +1,4 @@
-import { RenderInfo, AgoraEvent } from 'agora-meeting-core';
+import { RenderInfo, AgoraEvent, RoomCache } from 'agora-meeting-core';
 import { LanguageEnum } from '~ui-kit';
 
 export enum RoleTypeEnum {
@@ -37,7 +37,7 @@ export interface RoomParameters {
   userRole: RoleTypeEnum;
 }
 
-export type ListenerCallback = (evt: AgoraEvent) => void;
+export type ListenerCallback = (evt: AgoraEvent, cache?: RoomCache) => void;
 
 export type SDKConfig = {
   configParams: MeetingConfig;

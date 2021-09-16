@@ -12,6 +12,7 @@ import {
   useRecordContext,
   DevicePermission,
   RecordState,
+  useRoomContext,
 } from 'agora-meeting-core';
 
 import './index.css';
@@ -29,9 +30,10 @@ export interface FooterProps extends BaseProps {}
 export const MettingFooter: FC<FooterProps> = observer(({}) => {
   // watch language to update
   const { memberVisible, setMemberVisible, language } = useUIStore();
-  const { fireDialog } = useGlobalContext();
-  const { chatVisible, setChatVisible } = useMessagesContext();
+  const { fireDialog, fireToast } = useGlobalContext();
   const {
+    chatVisible,
+    setChatVisible,
     unreadChatMessageCount,
     setUnreadChatMessageCount,
   } = useMessagesContext();
@@ -53,13 +55,16 @@ export const MettingFooter: FC<FooterProps> = observer(({}) => {
     stopRecording,
     isRecordingByMyself,
   } = useRecordContext();
-  const { fireToast } = useGlobalContext();
+  const { roomJoined } = useRoomContext();
 
   const shareState = useMemo(() => {
     return isScreenSharing || isWhiteBoardOpening;
   }, [isScreenSharing, isWhiteBoardOpening]);
 
   const handleCameraClick = async () => {
+    if (!roomJoined) {
+      return;
+    }
     if (cameraLocalDeviceState === LocalDeviceState.open) {
       // 关闭摄像头
       await closeLocalDevice(DeviceTypeEnum.camera);
@@ -77,6 +82,9 @@ export const MettingFooter: FC<FooterProps> = observer(({}) => {
   };
 
   const handleMicClick = async () => {
+    if (!roomJoined) {
+      return;
+    }
     if (micLocalDeviceState === LocalDeviceState.open) {
       // 关闭麦克风
       await closeLocalDevice(DeviceTypeEnum.mic);

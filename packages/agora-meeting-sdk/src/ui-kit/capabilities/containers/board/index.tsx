@@ -1,12 +1,11 @@
 import {
   useBoardContext,
   useGlobalContext,
-  useRoomContext,
   BoardPermission,
 } from 'agora-meeting-core';
 import { ZoomItemType } from '~ui-kit';
 import { observer } from 'mobx-react';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { ColorsContainer } from './colors';
 import { PensContainer } from './pens';
 

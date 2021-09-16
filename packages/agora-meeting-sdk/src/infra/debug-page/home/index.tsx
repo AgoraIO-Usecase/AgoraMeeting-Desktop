@@ -33,7 +33,6 @@ export const HomePage = observer(() => {
       roomId: MD5(text.roomName),
       userName: text.userName,
       userId: MD5(text.userName),
-      rtmUid: MD5(text.userName),
       roomPassword: text.password,
       openMic: text.openMic,
       openCamera: text.openCamera,

@@ -2,10 +2,7 @@ import React, { FC, useEffect, useMemo, useState } from 'react';
 import { observer } from 'mobx-react';
 import './index.css';
 import classNames from 'classnames';
-import {
-  RenderInfoType,
-  useMediaContext,
-} from 'agora-meeting-core';
+import { RenderInfoType, useMediaContext } from 'agora-meeting-core';
 import { MettingVideoPlayerList, MettingVideoPlayer } from '../video-player';
 import { NetworkQuality } from '../network-quality';
 import { WhiteboardContainer } from '../board/index';
@@ -27,6 +24,10 @@ export const LayoutLecturer: FC<LayoutLecturerProps> = observer(({}) => {
     return main?.type === RenderInfoType.media;
   }, [main]);
 
+  const onVideoPlayerClick = (id: string) => {
+    setSelectedRender(id);
+  };
+
   return (
     <section className="layout-lecturer">
       {others?.length && !fullScreen ? (
@@ -34,7 +35,7 @@ export const LayoutLecturer: FC<LayoutLecturerProps> = observer(({}) => {
           <MettingVideoPlayerList>
             {others.map((item) => (
               <MettingVideoPlayer
-                onClick={(id) => setSelectedRender(id)}
+                onClick={onVideoPlayerClick}
                 key={item.id}
                 {...item}
                 showOperation={false}></MettingVideoPlayer>

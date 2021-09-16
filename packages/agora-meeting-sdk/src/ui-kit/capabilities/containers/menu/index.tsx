@@ -5,8 +5,6 @@ import './index.css';
 import { UserOperation, useUsersContext } from 'agora-meeting-core';
 import { observer } from 'mobx-react';
 import { t } from '~ui-kit';
-import { async } from 'rxjs';
-import { useUIStore } from '@/infra/hooks';
 
 export type MettingMenuTheme = 'black' | 'white';
 

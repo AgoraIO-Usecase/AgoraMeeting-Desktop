@@ -6,16 +6,6 @@ body,
   overflow: hidden;
 }
 
-#netless {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border: 1px solid #ececf1;
-  border-radius: 4px;
-}
 
 .filename {
   @apply text-white font-medium;

@@ -153,7 +153,6 @@ export class UIStore {
         (item) => renderItem.id === item.id,
       );
       if (index === -1) {
-        console.log('delete 1111', renderItem);
         // 被删掉了
         this.renderMap.delete(renderItem.id);
       }

@@ -21,7 +21,7 @@ import { MettingNotification } from '../notification';
 import { sleep } from '@/ui-kit/utils';
 import './index.css';
 import { useUIStore } from '@/infra/hooks';
-import { useMemo } from 'react';
+import { useWatch } from '@/ui-kit/hooks';
 
 let preLayout: RenderLayout = RenderLayout.tile;
 
@@ -31,7 +31,8 @@ export const MeetingContainer = observer(() => {
   const { renderInfoList } = useRenderContext();
   const { isScreenSharing } = useScreenContext();
   const { isWhiteBoardOpening } = useBoardContext();
-  const { roomJoined } = useRoomContext();
+  // const { privateChatMessage } = useMessagesContext();
+
 
   const drawerCls = classnames('drawer', {
     'drawer-show': chatVisible || memberVisible,
@@ -39,6 +40,10 @@ export const MeetingContainer = observer(() => {
 
   const [height, setHeight] = useState('100%');
   const { genRenderMap, setSelectedRender } = useUIStore();
+
+  // useWatch(privateChatMessage, () => {
+  //   console.log('privateChatMessage', privateChatMessage);
+  // });
 
   useEffect(() => {
     if (chatVisible && memberVisible) {

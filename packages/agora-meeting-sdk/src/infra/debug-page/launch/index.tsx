@@ -80,10 +80,9 @@ export const LaunchPage = observer(() => {
           }
           roomRef.current = await AgoraMeetingSDK.launch(dom, {
             ...launchOption,
-            userProperties: {
-              aaa: 'aaaa',
-              bbb: 'bbb',
-            },
+            // userProperties: {
+            //   aaa: 'aaa',
+            // },
             // TODO:  这里需要传递开发者自己发布的录制页面地址
             recordUrl: REACT_APP_AGORA_APP_RECORD_URL
               ? `${REACT_APP_AGORA_APP_RECORD_URL}`

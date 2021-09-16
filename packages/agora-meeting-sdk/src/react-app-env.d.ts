@@ -30,6 +30,7 @@ declare const REACT_APP_YOUR_OWN_OSS_BUCKET_SECRET: string;
 declare const REACT_APP_YOUR_OWN_OSS_BUCKET_NAME: string;
 declare const REACT_APP_YOUR_OWN_OSS_CDN_ACCELERATE: string;
 declare const REACT_APP_YOUR_OWN_OSS_BUCKET_FOLDER: string;
+
 interface CustomGlobalUtils {
   platform: string;
   isElectron: boolean;
@@ -48,6 +49,7 @@ interface CustomGlobalUtils {
   RTMRestful: RTMRestful;
   EduLogger: EduLogger;
   file: File;
+  WebIM: any;
 }
 
 declare interface Window extends CustomGlobalUtils {}
@@ -103,6 +105,7 @@ declare interface RecordingConfig {
 
 declare module 'react-gtm-module';
 declare module 'eruda';
+declare module 'easemob-websdk';
 
 declare module 'js-md5' {
   const MD5: any;
@@ -122,8 +125,6 @@ declare module 'worker-loader!*' {
 
   export default WebpackWorker;
 }
-
-
 
 declare module '*.scss';
 
