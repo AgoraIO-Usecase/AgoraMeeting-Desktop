@@ -37,6 +37,7 @@ export const LayoutLecturer: FC<LayoutLecturerProps> = observer(({}) => {
               <MettingVideoPlayer
                 onClick={onVideoPlayerClick}
                 key={item.id}
+                showInfo={item.type === RenderInfoType.media}
                 {...item}
                 showOperation={false}></MettingVideoPlayer>
             ))}
