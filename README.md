@@ -2,7 +2,13 @@
 
 > require node >= 12.0.0
 
+## lerna
 
+this is a multiple packages project with lerna, make sure lerna global installation
+
+```tsx
+yarn global add lerna
+```
 
 ## Recommend
 
