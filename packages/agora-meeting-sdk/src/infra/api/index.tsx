@@ -92,6 +92,8 @@ export default class AgoraMeetingSDK {
           recordUrl: option.recordUrl!,
           isRobot: !!option?.isRobot,
           userProperties: option?.userProperties,
+          flexRoomProps: option?.flexRoomProps,
+          recordConfig: option?.recordConfig,
         },
         // 初始化的房间信息
         roomInfoParams: {

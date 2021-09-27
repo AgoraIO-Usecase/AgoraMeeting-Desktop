@@ -22,13 +22,12 @@
 .rating .rating-item .left {
   flex: 0 0 110px;
   text-align: left;
-  height: 22px;
+  min-height: 22px;
   font-size: 14px;
   font-weight: 400;
   color: #2e3848;
   line-height: 22px;
   overflow: hidden;
-  white-space: nowrap;
 }
 
 .rating .rating-item .right {

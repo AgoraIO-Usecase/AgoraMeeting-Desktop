@@ -3,9 +3,8 @@ import { HomeStore } from '@/infra/stores/app/home';
 import { BizPageRouter } from '@/infra/types';
 import { ToastContainer } from '../../ui-kit/capabilities/containers/toast';
 import { DialogContainer } from '../../ui-kit/capabilities/containers/dialog';
-import { AppStoreConfigParams, AppStoreInitParams } from 'agora-meeting-core';
+import { AppStoreInitParams } from 'agora-meeting-core';
 import { I18nProvider } from '~ui-kit';
-import { RoomParameters } from '../api/declare';
 import { Provider } from 'mobx-react';
 import {
   HashRouter,
@@ -67,7 +66,7 @@ export type RoomContainerParams = {
 
 export const RoomContainer = (props: RoomContainerParams) => {
   return (
-    <I18nProvider >
+    <I18nProvider>
       <MemoryRouter>
         <RouteContainer
           routes={props.routes}
@@ -89,34 +88,14 @@ export const AppContainer = (props: AppContainerProps) => {
   );
 };
 
-type GenAppContainerProps = {
-  globalId: string;
-  appConfig: AppStoreConfigParams;
-  roomConfig?: RoomParameters;
-  resetRoomInfo: boolean;
-  basename?: string;
-};
-
 type GenAppComponentProps = Pick<
   AppContainerComponentProps,
   'routes' | 'basename'
 >;
 
-export const GenAppContainer = ({
-  globalId,
-  resetRoomInfo,
-  ...config
-}: GenAppContainerProps) => {
-  const appStore = new HomeStore({
-    config: config.appConfig,
-    roomInfoParams: config.roomConfig,
-    language: '',
-    resetRoomInfo,
-    startTime: 0,
-    duration: 0,
-  });
-  //@ts-ignore
-  window[globalId] = appStore;
+export const GenAppContainer = () => {
+  const appStore = new HomeStore({});
+
   return (props: GenAppComponentProps) => (
     <AppContainer {...props} store={appStore} />
   );

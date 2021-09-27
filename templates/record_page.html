@@ -44,12 +44,12 @@
         userRole,
         roomName,
         roomPassword,
+        language,
+        audioOnly,
+        sdkDomain
       } = useParams(window.location);
 
-      AgoraMeetingSDK.init({
-        appId,
-      });
-      AgoraMeetingSDK.launch(document.querySelector('#root1'), {
+      const params = {
         userId,
         userName,
         roomId,
@@ -67,13 +67,29 @@
         recordUrl,
         appId,
         userRole,
-        isRobot: true, // 用于录制
+        isRobot: true,
+        language,
+        sdkDomain,
         listener: (evt, args) => {
           console.log('evt', evt, args);
         },
-      }).then(() => {
-        console.log('start launch');
+      };
+
+      if (audioOnly) {
+        // 录制配置
+        params.recordConfig = {
+          audioOnly,
+        };
+      }
+
+      AgoraMeetingSDK.init({
+        appId,
       });
+      AgoraMeetingSDK.launch(document.querySelector('#root1'), params).then(
+        () => {
+          console.log('start launch');
+        },
+      );
     </script>
   </body>
 </html>

@@ -41,7 +41,7 @@ export default class App {
       roomPassword: '',
       pretest: true,
       duration: 2700,
-      maxPeople: 1000,
+      totalPeople: 1000,
       openCamera: true,
       openMic: true,
       userInOutNotificationLimitCount: 50,

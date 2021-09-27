@@ -1,4 +1,9 @@
-import { RenderInfo, AgoraEvent, RoomCache } from 'agora-meeting-core';
+import {
+  RenderInfo,
+  AgoraEvent,
+  RoomCache,
+  RecordConfig,
+} from 'agora-meeting-core';
 import { LanguageEnum } from '~ui-kit';
 
 export enum RoleTypeEnum {
@@ -58,9 +63,11 @@ export type LaunchConfig = {
   totalPeople: number; // 最大人数
   userInOutNotificationLimitCount?: number; // 进出通知的限制人数
   recordUrl?: string; // 录制页地址
+  recordConfig?: RecordConfig; //录制配置
   isRobot?: boolean; // 是否机器人
-  userProperties?: Object;
-  sdkDomain?: string;
+  userProperties?: Object; // 自定义用户属性
+  flexRoomProps?: Object; // 自定义房间属性
+  sdkDomain?: string; // 域名
   language?: LanguageEnum; // 国际化
 };
 

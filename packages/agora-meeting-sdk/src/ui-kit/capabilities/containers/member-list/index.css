@@ -87,7 +87,6 @@
 /* 底部 */
 .metting-member .member__footer {
   flex: 0 0 74px;
-  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +99,7 @@
 
 .metting-member .member__footer .all-mute,
 .all-close-camera {
-  width: 112px;
+  padding: 0 4px;
   height: 30px;
   border-radius: 2px;
   border: 1px solid #808fa3;

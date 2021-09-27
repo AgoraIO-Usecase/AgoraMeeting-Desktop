@@ -5,51 +5,12 @@ body,
   height: 100%;
   overflow: hidden;
 }
-
-
-.filename {
-  @apply text-white font-medium;
-  font-size: 12px;
-  margin-bottom: 5px;
-  /* text-shadow: 0 1px 2px rgb(13 29 61 / 80%); */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 71px;
-}
-
-.video-marquee-pin {
-  position: absolute;
-  height: 165px;
-  width: 100%;
-}
-
-.video-marquee-pin ~ .board-box {
-  margin-top: 165px;
-}
-
-.board-box {
-  position: relative;
-  height: 100%;
-}
+/* 
 
 .column {
   display: flex;
   flex-direction: column;
-}
-
-.fullscreen .layout-aside {
-  border: none;
-  min-width: 35px;
-}
-
-.fullscreen .video-player {
-  display: none;
-}
-
-.fullscreen .video-marquee-pin ~ .board-box {
-  margin-top: 0px;
-}
+} */
 
 .placeholder-desc {
   position: absolute;

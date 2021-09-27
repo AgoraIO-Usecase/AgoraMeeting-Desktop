@@ -184,7 +184,7 @@
     "tslib": "2.3.1"
   },
   "dependencies": {
-    "agora-meeting-core": "1.1.2-rc.3",
+    "agora-meeting-core": "1.1.3-rc.1",
     "@tailwindcss/forms": "0.2.1",
     "agora-access-token": "2.0.4",
     "i18next": "20.1.0",

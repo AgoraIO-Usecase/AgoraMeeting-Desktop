@@ -59,6 +59,7 @@
     "run:apaas": "lerna exec --scope=agora-apaas-demo npm run dev",
     "run:ui-kit": "lerna exec --scope=agora-meeting-ui yarn storybook",
     "test": "lerna run test",
+    "clean": "lerna clean",
     "ci:build:web": "yarn release:demo",
     "ci:build:electron:win": "yarn release:electron:win",
     "ci:build:electron:mac": "yarn release:electron:mac",

@@ -139,7 +139,7 @@ export const MettingFooter: FC<FooterProps> = observer(({}) => {
       <div className="footer__center">
         <FooterItem
           key="audio"
-          text={transI18n('device.camera')}
+          text={transI18n('device.microphone')}
           status={micLocalDeviceState}
           type="audio"
           onClick={handleMicClick}

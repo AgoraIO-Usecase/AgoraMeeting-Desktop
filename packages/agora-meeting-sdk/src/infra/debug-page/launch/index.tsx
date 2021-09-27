@@ -80,13 +80,19 @@ export const LaunchPage = observer(() => {
           }
           roomRef.current = await AgoraMeetingSDK.launch(dom, {
             ...launchOption,
+            // flexRoomProps: {
+            //   aaa: '1111',
+            // },
             // userProperties: {
             //   aaa: 'aaa',
+            // },
+            // recordConfig: {
+            //   audioOnly: 'asdasd',
             // },
             // TODO:  这里需要传递开发者自己发布的录制页面地址
             recordUrl: REACT_APP_AGORA_APP_RECORD_URL
               ? `${REACT_APP_AGORA_APP_RECORD_URL}`
-              : `https://webdemo.agora.io/agorameeting/prod/release_apaas_meeting_1.0.2/record_page`,
+              : `https://webdemo.agora.io/agorameeting/test/dev_apaas_meeting_1.1.3/record_page`,
 
             listener: (evt: AgoraEvent, cache?: RoomCache) => {
               console.log('meeting sdk #listener ', evt, cache);

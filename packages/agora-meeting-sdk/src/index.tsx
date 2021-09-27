@@ -17,17 +17,4 @@ GlobalStorage.useSessionStorage();
 //@ts-ignore
 window.AgoraMeetingSDK = AgoraMeetingSDK;
 
-ReactDOM.render(
-  <App
-    appConfig={{
-      agoraAppId: `${REACT_APP_AGORA_APP_ID}`,
-      agoraNetlessAppId: `${REACT_APP_NETLESS_APP_ID}`,
-      sdkDomain: `${REACT_APP_AGORA_APP_SDK_DOMAIN}`,
-      enableLog: true,
-      token: `${REACT_APP_AGORA_APP_RTM_TOKEN}`,
-      rtmUid: '',
-      recordUrl: `${REACT_APP_AGORA_APP_RECORD_URL}`,
-    }}
-  />,
-  document.getElementById('root'),
-);
+ReactDOM.render(<App />, document.getElementById('root'));
