@@ -69,6 +69,7 @@ export type LaunchConfig = {
   flexRoomProps?: Object; // 自定义房间属性
   sdkDomain?: string; // 域名
   language?: LanguageEnum; // 国际化
+  maxHost?: number; //最大主持人数
 };
 
 // 视图展示模式

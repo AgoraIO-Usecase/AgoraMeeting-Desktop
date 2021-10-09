@@ -5213,10 +5213,10 @@ agora-access-token@2.0.4:
     crc-32 "1.2.0"
     cuint "0.2.2"
 
-agora-meeting-core@1.1.3-rc.1:
-  version "1.1.3-rc.1"
-  resolved "https://registry.npmjs.org/agora-meeting-core/-/agora-meeting-core-1.1.3-rc.1.tgz#079491cd418d0b5434bc9120b9381ab4314300bf"
-  integrity sha512-utszbjcR7XZC6IzefimIUwZXZM9AHerETOn/OT77lMEcCeu/7r0YInRwYcy72QHHBOk6UWRBvlCVo/b3zxAV3Q==
+agora-meeting-core@1.1.4-rc.1:
+  version "1.1.4-rc.1"
+  resolved "https://registry.npmjs.org/agora-meeting-core/-/agora-meeting-core-1.1.4-rc.1.tgz#6bcf04b6bdd182665b7cb6b7ce0f97c866534627"
+  integrity sha512-EskVXkziH9h9jWA0FBiUHqSqRE0VyYazv/xeg8XkavHXtJ30C052kzm2pdVirHpqOR/R28Mn/7mkewUJ6telJw==
   dependencies:
     "@netless/combine-player" "1.1.4"
     "@netless/cursor-tool" "0.0.7"
@@ -5233,10 +5233,10 @@ agora-meeting-core@1.1.3-rc.1:
     uuid "3.3.3"
     white-web-sdk "2.12.21"
 
-agora-meeting-sdk@1.1.3-rc.1:
-  version "1.1.3-rc.1"
-  resolved "https://registry.npmjs.org/agora-meeting-sdk/-/agora-meeting-sdk-1.1.3-rc.1.tgz#31d3f2860203e4a9d0104606652d45a756a699a3"
-  integrity sha512-vOFq5b05jjMie99n5RV+qpkGI2nW7ylYw0W0fVzSyzFnh5d9g4LptGgSe8F6CNq5RajMGBfUqxIqx3Iu9GLXAA==
+agora-meeting-sdk@1.1.4-rc.1:
+  version "1.1.4-rc.1"
+  resolved "https://registry.npmjs.org/agora-meeting-sdk/-/agora-meeting-sdk-1.1.4-rc.1.tgz#95a524e4e3d7c0b818bdecc317cb6dcc3dfbc3cd"
+  integrity sha512-u4o0Ak1HcIYeIX8b0fum0SpCzlGEjhwbONe0fzf1/3qnSKIIL3xYVgRbheIW1q5mGrKJ+rqw3/HMNmcrbYmocA==
   dependencies:
     "@tailwindcss/forms" "0.2.1"
     agora-access-token "2.0.4"

@@ -314,7 +314,7 @@ export const en = {
     host_max: 'This room already has max number of host',
     password_error: 'Password is incorrect',
     room_has_host:
-      'There is already a host in the room, please contact the host to designate you as the host, up to 3 people at the same time as the host',
+      'There is already a host in the room, please contact the host to designate you as the host',
     board_max: 'The whiteboard participants has reached max number',
     user_is_host: 'User is already the host',
     room_max_member: 'The room is full!',

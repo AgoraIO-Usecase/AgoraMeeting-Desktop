@@ -196,7 +196,7 @@ export const zh = {
     host_max: '该房间管理员数量已经达到最大值',
     password_error: '密码不正确',
     room_has_host:
-      '房间内已经有主持人，请联系主持人指定您为主持人，最多3人同时为主持人',
+      '房间内已经有主持人，请联系主持人指定您为主持人',
     board_max: '白板已达到最大人数',
     user_is_host: '用户已经是主持人',
     room_max_member: '房间内人数已达上限',

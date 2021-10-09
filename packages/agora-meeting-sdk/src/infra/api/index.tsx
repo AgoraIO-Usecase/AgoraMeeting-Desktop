@@ -108,6 +108,7 @@ export default class AgoraMeetingSDK {
           totalPeople: option.totalPeople,
           userInOutNotificationLimitCount:
             option.userInOutNotificationLimitCount,
+          maxHost: option.maxHost,
         },
         resetRoomInfo: false,
         mainPath: mainPath,
