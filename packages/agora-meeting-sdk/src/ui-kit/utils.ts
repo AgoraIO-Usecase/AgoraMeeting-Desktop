@@ -2,8 +2,6 @@ import { NotifyMessageType, UserInfo } from 'agora-meeting-core';
 import { transI18n } from '~ui-kit';
 import { EventEmitter } from 'events';
 import { ApplianceNames } from 'agora-meeting-core';
-import { BizLogger } from '../infra/biz-logger';
-import { GlobalStorage } from '../infra/storage';
 
 // NotifyMessageType => 转换成内容
 export function transformNotifyMessageContent(
@@ -131,25 +129,9 @@ export const debounce = function (foo: any, t: number) {
   };
 };
 
-// media device helper
-export const getDeviceLabelFromStorage = (type: string) => {
-  const mediaDeviceStorage = GlobalStorage.read('mediaDevice') || {};
-
-  if (!['cameraLabel', 'microphoneLabel'].includes(type)) {
-    return '';
-  }
-  return mediaDeviceStorage[type];
-};
 
 export type BytesType = number | string;
 
-export const isElectron =
-  window.isElectron || window.agoraBridge ? true : false;
-
-export const platform =
-  window.isElectron || window.agoraBridge ? 'electron' : 'web';
-
-BizLogger.info(`CURRENT RUNTIME: ${platform}`);
 
 export class ZoomController extends EventEmitter {
   private static readonly syncDuration: number = 200;

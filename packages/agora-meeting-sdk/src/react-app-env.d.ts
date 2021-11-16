@@ -1,8 +1,7 @@
-/// <reference types="react-scripts" />
 /// <reference types="./sdk/education/interface/index.d.ts" />
 
 declare module '*.css';
-
+declare module '*.svg'
 declare module '*.json';
 declare module '*.mp3';
 declare module '*.mp4';
@@ -10,21 +9,15 @@ declare module '*.png';
 declare module '*.gif';
 declare module '*.jpg';
 
+declare const REACT_APP_AGORA_APP_CERTIFICATE: string;
 declare const REACT_APP_AGORA_APP_RECORD_URL: string;
 declare const REACT_APP_AGORA_RESTFULL_TOKEN: string;
 declare const REACT_APP_AGORA_APP_SDK_DOMAIN: string;
 declare const REACT_APP_AGORA_APP_SDK_LOG_SECRET: string;
-declare const REACT_APP_BUILD_VERSION: string;
 declare const REACT_APP_PUBLISH_DATE: string;
-declare const REACT_APP_AGORA_GTM_ID: string;
 declare const REACT_APP_AGORA_APP_ID: string;
-declare const REACT_APP_AGORA_APP_CERTIFICATE: string;
 declare const REACT_APP_AGORA_APP_RTM_TOKEN: string;
 declare const REACT_APP_NETLESS_APP_ID: string;
-declare const REACT_APP_AGORA_CUSTOMER_ID: string;
-declare const REACT_APP_AGORA_CUSTOMER_CERTIFICATE: string;
-declare const REACT_APP_AGORA_APP_TOKEN: string;
-declare const REACT_APP_AGORA_LOG: string;
 declare const REACT_APP_YOUR_OWN_OSS_BUCKET_KEY: string;
 declare const REACT_APP_YOUR_OWN_OSS_BUCKET_SECRET: string;
 declare const REACT_APP_YOUR_OWN_OSS_BUCKET_NAME: string;
@@ -103,7 +96,7 @@ declare interface RecordingConfig {
   storageConfig?: Partial<StorageConfigParams>;
 }
 
-declare module 'react-gtm-module';
+
 declare module 'eruda';
 declare module 'easemob-websdk';
 

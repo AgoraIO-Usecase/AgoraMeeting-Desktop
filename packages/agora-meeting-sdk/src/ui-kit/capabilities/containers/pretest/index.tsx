@@ -55,6 +55,7 @@ export const PretestContainer = observer(() => {
   }, [pretestCameraRenderer, cameraId, isMirror]);
 
   useEffect(() => installPretest(), []);
+  
 
   const onChangeDevice = async (type: string, value: any) => {
     switch (type) {

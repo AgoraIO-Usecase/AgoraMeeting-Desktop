@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC,KeyboardEvent,MouseEvent } from 'react';
 import './index.css';
 import RcTabs, { TabsProps as RcTabsProps } from 'rc-tabs';
 import { EditableConfig } from 'rc-tabs/lib/interface';
@@ -15,7 +15,7 @@ export interface TabsProps extends Omit<RcTabsProps, 'editable'> {
   type?: TabsType;
   centered?: boolean;
   onEdit?: (
-    e: React.MouseEvent | React.KeyboardEvent | string,
+    e: any,
     action: 'add' | 'remove',
   ) => void;
 }

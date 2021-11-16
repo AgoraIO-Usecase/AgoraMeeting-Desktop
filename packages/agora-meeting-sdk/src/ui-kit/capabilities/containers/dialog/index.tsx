@@ -29,10 +29,17 @@ export const ApplyTurnOnDeviceDialog: React.FC<
   BaseDialogProps & { device: DeviceTypeEnum; applyOpenLocalDevice: () => void }
 > = observer(({ id, device }) => {
   const { removeDialog } = useUIStore();
+  const { fireToast } = useGlobalContext();
   const { applyOpenLocalDevice } = useMediaContext();
 
   const onOk = async () => {
-    applyOpenLocalDevice(device);
+    try {
+      await applyOpenLocalDevice(device);
+    } catch (err) {
+      err.toast && fireToast(err.toast);
+      throw err;
+    }
+
     removeDialog(id);
   };
 

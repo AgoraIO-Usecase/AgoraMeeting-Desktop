@@ -76,7 +76,12 @@ export const MettingFooter: FC<FooterProps> = observer(({}) => {
         fireDialog('apply-turn-on-device', { device: DeviceTypeEnum.camera });
       } else if (permission === DevicePermission.granted) {
         // 直接打开
-        await openLocalDevice(DeviceTypeEnum.camera);
+        try {
+          await openLocalDevice(DeviceTypeEnum.camera);
+        } catch (err) {
+          err.toast && fireToast(err.toast);
+          throw err;
+        }
       }
     }
   };
@@ -96,7 +101,12 @@ export const MettingFooter: FC<FooterProps> = observer(({}) => {
         fireDialog('apply-turn-on-device', { device: DeviceTypeEnum.mic });
       } else if (permission === DevicePermission.granted) {
         // 直接打开
-        await openLocalDevice(DeviceTypeEnum.mic);
+        try {
+          await openLocalDevice(DeviceTypeEnum.mic);
+        } catch (err) {
+          err.toast && fireToast(err.toast);
+          throw err;
+        }
       }
     }
   };

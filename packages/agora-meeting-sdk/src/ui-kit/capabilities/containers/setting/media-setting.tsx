@@ -2,10 +2,8 @@ import React, { FC, useState } from 'react';
 import classnames from 'classnames';
 import { BaseProps } from '~components/interface/base-props';
 import { Select } from '~components/select';
-import { Slider } from '~components/slider';
 import './index.css';
 import { transI18n } from '~components/i18n';
-import { DeviceProps } from './declare';
 import { usePretestContext } from 'agora-meeting-core';
 import { observer } from 'mobx-react';
 
@@ -20,7 +18,17 @@ export const MediaSetting: FC<MediaSettingProps> = observer(() => {
     speakerId,
     microphoneId,
     changeDevice,
+    getCameras,
+    getMicrophones,
   } = usePretestContext();
+
+  if (!cameraList.length) {
+    getCameras();
+  }
+  
+  if (!microphoneList.length) {
+    getMicrophones();
+  }
 
   const cameraOptions = cameraList.map((item) => ({
     label: item.label,

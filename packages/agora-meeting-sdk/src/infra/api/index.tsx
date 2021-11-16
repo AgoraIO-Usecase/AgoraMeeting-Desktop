@@ -1,5 +1,4 @@
 import { CoreContextProvider, GenericErrorWrapper } from 'agora-meeting-core';
-import 'promise-polyfill/src/polyfill';
 import { LiveRoom } from '../monolithic/live-room';
 import { BizPagePath } from '../types';
 import { controller } from './controller';

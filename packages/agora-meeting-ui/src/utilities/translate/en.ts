@@ -181,6 +181,8 @@ export const en = {
     screen_ongoing: 'Screen share is ongoing',
     copy_success: 'Copy success',
     err_oss_host: 'Cannot acquire oss host',
+    room_max_broadcaster:
+    'The number of broadcaster has reached max number  in the room!',
   },
   scaffold: {
     search: 'Search',

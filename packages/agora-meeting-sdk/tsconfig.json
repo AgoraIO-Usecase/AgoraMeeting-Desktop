@@ -1,15 +1,27 @@
 {
-  "extends": "./meeting-demo-tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es6",
-    "experimentalDecorators": true,
     "module": "esnext",
+    "experimentalDecorators": true,
     "lib": [
       "dom",
       "dom.iterable",
       "esnext",
       "webworker"
     ],
+    "paths": {
+      "@/*": ["src/*"],
+      "~core": ["./src/core"],
+      "~core/*": ["./src/core/*"],
+      "~ui-kit": ["../agora-meeting-ui/src"],
+      "~components": ["../agora-meeting-ui/src/components"],
+      "~components/*": ["../agora-meeting-ui/src/components/*"],
+      "~scaffold": ["../agora-meeting-ui/src/scaffold"],
+      "~scaffold/*": ["../agora-meeting-ui/src/scaffold/*"],
+      "~utilities": ["../agora-meeting-ui/src/utilities"],
+      "~utilities/*": ["../agora-meeting-ui/src/utilities/*"],
+    },
     "outDir": ".demo",
     "noImplicitAny": true,
     "noImplicitThis": true,

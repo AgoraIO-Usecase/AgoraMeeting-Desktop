@@ -65,10 +65,6 @@ module.exports = {
       ],
       include: path.resolve(__dirname, '../'),
     });
-    config.module.rules.push({
-      test: /\.js$/,
-      loader: require.resolve('@open-wc/webpack-import-meta-loader'),
-    });
 
     config.resolve.alias = {
       ...config.resolve.alias,

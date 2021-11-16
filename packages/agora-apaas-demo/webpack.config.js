@@ -1,8 +1,8 @@
-const path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+var webpack = require('webpack');
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-process.env.CVA_PORT = process.env.CVA_PORT || 9000
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.env.CVA_PORT = process.env.CVA_PORT || 9000;
 
 const config = function (mode) {
   let conf = {
@@ -32,27 +32,28 @@ const config = function (mode) {
       ],
     },
     output: {
-      path: path.resolve(__dirname, 'public/bundle/'),
       filename: 'bundle.js',
       publicPath: '/',
     },
-    plugins: [],
+    plugins: [
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+        Buffer: ['buffer', 'Buffer'],
+      }),
+    ],
     devServer: {
       open: true,
-      watchOptions: {
-        ignored: /node_modules/,
-      },
-      contentBase: 'public',
       compress: true,
-      hot: true,
       port: process.env.CVA_PORT,
     },
-  }
+    resolve: {
+      fallback: {
+        crypto: require.resolve('crypto-browserify'),
+        stream: require.resolve('stream-browserify'),
+      },
+    },
+  };
+  return conf;
+};
 
-  conf.plugins.push(new webpack.HotModuleReplacementPlugin())
-  conf.plugins.push(new webpack.NoEmitOnErrorsPlugin())
-
-  return conf
-}
-
-module.exports = config(process.env.NODE_ENV)
+module.exports = config(process.env.NODE_ENV);
